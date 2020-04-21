@@ -32,7 +32,7 @@ const TasksApp = () => {
 
         return(<TaskContext.Provider value = {{tasks, tasksDispatch}}>
                      <Header />
-                {isFetched ? <TasksList/>: (<div>Loadin...</div>)}
+                {isFetched ? <TasksList/>: (<div>Loading...</div>)}
              </TaskContext.Provider>
            )
 
