@@ -6,7 +6,7 @@ const Header = () => {
 
     return (<div>
             <h1>Task Manager App</h1>
-            {/*<Link to={'/'}>Home </Link>*/}
+            {/*<Link to={'/dashboard'}>Home </Link>*/}
             {/*<Link to={'/create'}>Create a new Task</Link>*/}
         </div>
     )

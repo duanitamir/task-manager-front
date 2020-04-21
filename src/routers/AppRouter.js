@@ -11,9 +11,9 @@ export default () =>
     <Router history={history}>
         <div>
             <Switch>
-                <Route path={'/'} component={LoginPage} exact={true}/>
-                <Route path={'/dashboard'} component={TasksApp} exact={true}/>
+                <Route path={'/dashboard'} component={TasksApp}/>
                 <Route path={'/create'} component={AddTask}/>
+                <Route path={'/'} component={LoginPage} exact={true}/>
             </Switch>
         </div>
     </Router>

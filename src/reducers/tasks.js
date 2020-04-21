@@ -14,7 +14,8 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
         case 'COMPLETE_TASK':
             return state.map ( item => (item.id === action.id) ? (item.completed = true ) : item)
 
-        case 'GET_TASKS':
+        case 'SET_TASKS':
+            return action.tasks
 
         default:
             return state;

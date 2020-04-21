@@ -1,18 +1,17 @@
-import React, {useState} from 'react';
+import React, { useContext} from 'react';
 import Task from './Task'
+import TaskContext from '../context/tasks-context'
 
+const TaskList = () => {
 
-const TaskList = (props) => {
+    const { tasks }= useContext(TaskContext)
 
-    console.log(props.tasks);
-
-    const [tasks, setTasks] = useState(props.tasks);
+    console.log(tasks);
 
     const completeTask = (id) => {
         let taskIndex = tasks.findIndex( task => task._id === id); // wanted task
         tasks[taskIndex].completed = true;
-        setTasks(tasks);
-        // console.log(tasks)
+        tasksDispatch(tasks);
     }
 
 

@@ -1,14 +1,15 @@
-import React, {useState, useEffect} from 'react';
-import { useDispatch } from "react-redux";
-import { login } from '../actions/users'
+import React, {useState, useContext} from 'react';
+import userContext from '../context/user-context'
 
 
 const LoginPage = (props) => {
 
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
-    const [token, setToken] = useState(false);
-    const [user, setUser] = useState('')
+
+
+    const { userDispatch } = useContext(userContext);
+
 
 
     const handleLogin = (e) => {
@@ -27,15 +28,14 @@ const LoginPage = (props) => {
             )}
         ).then( (res) => {
             return res.json()}).then((data)=>{
-                setToken(data.token)
-                setUser(data.user)
-            return ({user,token})
+                userDispatch({type: 'LOGIN' ,user: (data.user),token: (data.token)})
+            return ({user: data.user, token: data.token});
         }).catch(e=> {
             console.log(e);})
 
         response.then((data) => {
             if(data.token){
-                props.renderApp(data.user, data.token);
+                props.renderApp();
             }
         }).catch( e => {
             console.log(e);})

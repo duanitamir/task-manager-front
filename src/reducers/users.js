@@ -3,14 +3,16 @@
 
 
 
-const userReducer = (state = {user:null, token:null}, action) => {
+const userReducer = (state = {user:null}, action) => {
     switch (action.type){
 
         case 'LOGIN':
-            return ({user:action.user, token:action.token})
+            return ({user:action.data, token:action.token})
 
         case 'LOGOUT':
             return ({});
+        default:
+                return state;
     }
 
 }
