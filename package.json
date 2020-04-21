@@ -1,0 +1,40 @@
+{
+  "name": "task-maganer-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:prod": "webpack -p --env production",
+    "dev-server": "webpack-dev-server --inline --content-base ./public",
+    "build": "webpack"
+  },
+  "proxy": "https://task-manager-duani.herokuapp.com/",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "axios": "^0.19.2",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "css-loader": "^3.5.2",
+    "file-loader": "^6.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.9.4",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-hot-middleware": "^2.25.0"
+  }
+}
