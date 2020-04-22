@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useContext} from "react";
+import React, { Component, useEffect, useReducer,useState ,useContext} from "react";
 
 import TasksReducer from '../reducers/tasks'
 import Header from './Header'
@@ -6,36 +6,40 @@ import TasksList from './TasksList'
 import TaskContext from '../context/tasks-context'
 import UserContext from '../context/user-context'
 
-let isFetched = false;
+
+let isFetched;
 
 const TasksApp = () => {
-    const [ tasks, tasksDispatch ] = useReducer(TasksReducer, []);
 
-    const {user} = useContext(UserContext)
+    const { user } = useContext(UserContext);
+    const [loading, setLoading] = useState(false);
+    const {tasks, tasksDispatch} = useContext(TaskContext);
 
-    useEffect(()=>{
-        const data = fetch('https://task-manager-duani.herokuapp.com/tasks',{
+
+    const fetchData = () =>{
+        fetch('https://task-manager-duani.herokuapp.com/tasks',{
             method: 'GET',
             headers:
                 {'cache-control': 'no-cache',
                     Authorization: `Bearer ${user.token}`}
-        } ).then((data)=> {return data;})
+        } )
+            .then((data)=> {return data;})
             .then( step => step.json())
+            .then( (tasks) => { tasksDispatch({type:'SET_TASKS', tasks}); return true})
+            .then( () => {setLoading(true)})
             .catch( e => {console.log(e);})
+    }
 
-        data.then( tasks => { console.log(tasks);
-            tasksDispatch({type:'SET_TASKS', tasks})
-            isFetched = true;
+    useEffect( () => {
+        fetchData()
+    } , [])
 
-        })
-    },[])
 
-        return(<TaskContext.Provider value = {{tasks, tasksDispatch}}>
-                     <Header />
-                {isFetched ? <TasksList/>: (<div>Loading...</div>)}
-             </TaskContext.Provider>
-           )
-
+        return(
+            <div>
+                {loading ?  <TasksList /> : <div>Loading...</div>}
+            </div>
+        )
 }
 
 
