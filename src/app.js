@@ -7,6 +7,7 @@ import AppRouter from "./routers/AppRouter";
 import createHistory from "history/createBrowserHistory";
 import TasksReducer from "./reducers/tasks";
 import TaskContext from "./context/tasks-context";
+import './styles/styles.scss'
 require("babel-polyfill");
 
 

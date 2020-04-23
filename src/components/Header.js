@@ -15,8 +15,8 @@ const Header = (props) =>  {
     }
 
 
-    return (<div>
-            <h1>Task Manager App</h1>
+    return (<div className='header'>
+            <h1 className='header__title'>Task Manager App</h1>
             <Link to={'/dashboard'}>Home </Link>
             <Link to={'/create'}>Create a new Task</Link>
             <button onClick={handleLogout}>Logout</button>
