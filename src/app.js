@@ -10,8 +10,7 @@ import TaskContext from "./context/tasks-context";
 require("babel-polyfill");
 
 
-let isAuth = false;
-
+let isAuth = localStorage.getItem('token');
 
 export const history = createHistory();
 
@@ -29,15 +28,25 @@ const App = () => {
     const [tasks, tasksDispatch] = useReducer(TasksReducer, []);
 
     useEffect( () => {
-        if (user.token !== undefined){
+        if(JSON.parse(localStorage.getItem('user')) !== undefined || null ) {
+            userDispatch({type:'SET_USER'})
             renderApp()
         }
+    },[])
+
+    useEffect( () => {
+        if (user.token !== undefined){
+                renderApp()
+        }
     }, [user])
+
 
     return (
         <UserContext.Provider value={{user, userDispatch}}>
             <TaskContext.Provider value={{tasks, tasksDispatch}} >
-                {!isAuth ?<LoginPage renderApp={renderApp} /> : <AppRouter history={history}/>}
+                {!!isAuth ?
+                    <AppRouter history={history}/> :
+                    <LoginPage rxenderApp={renderApp} /> }
             </TaskContext.Provider>
         </UserContext.Provider>)
 }

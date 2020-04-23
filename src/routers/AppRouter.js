@@ -1,19 +1,18 @@
 import React,{useContext} from 'react';
-import { Router, Route, Switch, withRouter } from "react-router-dom";
-import TasksApp from '../components/TasksApp';
+import { Router, Route, Switch } from "react-router-dom";
+
 import AddTask from '../components/AddTask';
-import LoginPage from "../components/LoginPage";
-import {PrivateRoute} from "./PrivateRoute";
-import {PublicRoute} from "./PublicRouter";
-import UserContext from "../context/user-context";
-import TasksContext from "../context/tasks-context";
 import Header from '../components/Header'
+import LoginPage from "../components/LoginPage";
+import {PublicRoute} from "./PublicRouter";
+import {PrivateRoute} from "./PrivateRoute";
+import TasksApp from '../components/TasksApp';
+import UserContext from "../context/user-context";
 
 
 export default ({history}) =>{
 
     const {user} = useContext(UserContext)
-    const {tasksDispatch} = useContext(TasksContext)
 
     return (
         <Router history={history}>

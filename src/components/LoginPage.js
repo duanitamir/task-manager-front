@@ -24,7 +24,7 @@ const LoginPage = (props) => {
             )}
         ).then( (res) => {
             return res.json()}).then((data)=>{
-                userDispatch({type: 'LOGIN' ,user: (data.user),token: (data.token)})
+                userDispatch({type: 'LOGIN' ,user: (data.user) ,token: (data.token)})
             return ({user: data.user, token: data.token});
         }).catch(e=> {
             console.log(e);})
