@@ -2,7 +2,7 @@ import React,{useContext} from 'react';
 import { Link } from "react-router-dom";
 
 import UserContext from '../context/user-context'
-import {history} from "../app";
+import {history} from "../routers/AppRouter";
 
 const Header = (props) =>  {
 
@@ -16,10 +16,12 @@ const Header = (props) =>  {
 
 
     return (<div className='header'>
-            <h1 className='header__title'>Task Manager App</h1>
-            <Link to={'/dashboard'}>Home </Link>
-            <Link to={'/create'}>Create a new Task</Link>
-            <button onClick={handleLogout}>Logout</button>
+            <h1 > <Link className='header__title' to={'/dashboard'}> Task Manager App</Link></h1>
+            <div className="header__nav">
+                <Link className='header__title' to={'/create'}>Create a new Task</Link>
+                <button onClick={handleLogout}>Logout</button>
+            </div>
+
         </div>
     )
 }

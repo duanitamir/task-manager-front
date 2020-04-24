@@ -1,12 +1,16 @@
-import React, {useState, useContext } from 'react';
+import React, {useState, useContext ,useEffect} from 'react';
 import UserContext from "../context/user-context";
-
+import {history} from '../routers/AppRouter'
 
 const LoginPage = (props) => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
 
     const {userDispatch} = useContext(UserContext);
+
+    useEffect( () => {
+        history.push('/')
+    }, [])
 
 
     const handleLogin = (e) => {

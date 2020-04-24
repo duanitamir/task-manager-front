@@ -32,7 +32,22 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
             return state.map( item => (item.id === action.id) ? ([...item, ...action.update]) : (item))
 
         case 'COMPLETE_TASK':
-            return state.map ( item => (item.id === action.id) ? (item.completed = true ) : item)
+
+            fetch(`https://task-manager-duani.herokuapp.com/tasks/${action.id}`, {
+                method: 'PATCH',
+                headers:
+                    { 'Postman-Token': '20d45446-b56a-492c-b53e-420a79caac41',
+                        Authorization: `Bearer ${action.token}`,
+                        'cache-control': 'no-cache',
+                        'Content-Type': 'application/json' },
+                body: JSON.stringify({ completed: !action.completed }),
+                json: true }).then( (res) => {console.log(res)})
+                .catch(e=>{console.log(e);})
+
+
+            return state
+
+
 
         case 'SET_TASKS':
             return action.tasks

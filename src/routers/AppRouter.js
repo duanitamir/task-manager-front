@@ -8,9 +8,12 @@ import {PublicRoute} from "./PublicRouter";
 import {PrivateRoute} from "./PrivateRoute";
 import TasksApp from '../components/TasksApp';
 import UserContext from "../context/user-context";
+import createHistory from "history/createBrowserHistory";
 
 
-export default ({history}) =>{
+export const history = createHistory();
+
+export default () =>{
 
     const {user} = useContext(UserContext)
 

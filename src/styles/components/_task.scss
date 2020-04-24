@@ -1,0 +1,22 @@
+.task-container{
+  background: $grey;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 10px;
+  width: 250px;
+  padding: 15px;
+}
+
+.tasks-list{
+  display: flex;
+}
+
+.task-container__description{
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+.task-container__completed{
+
+}

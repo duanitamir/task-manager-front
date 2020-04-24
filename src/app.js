@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import LoginPage from './components/LoginPage';
 import UserReducer from "./reducers/users";
 import UserContext from './context/user-context';
-import AppRouter from "./routers/AppRouter";
-import createHistory from "history/createBrowserHistory";
+import AppRouter, {history} from "./routers/AppRouter";
 import TasksReducer from "./reducers/tasks";
 import TaskContext from "./context/tasks-context";
 import './styles/styles.scss'
@@ -12,8 +11,6 @@ require("babel-polyfill");
 
 
 let isAuth = localStorage.getItem('token');
-
-export const history = createHistory();
 
 const renderApp = () => {
     if(!isAuth){
@@ -29,12 +26,13 @@ const App = () => {
     const [tasks, tasksDispatch] = useReducer(TasksReducer, []);
 
     useEffect( () => {
-        if(JSON.parse(localStorage.getItem('user')) !== undefined || null ) {
+        if(JSON.parse(localStorage.getItem('user')) !== null ) {
             userDispatch({type:'SET_USER'})
             renderApp()
         }
     },[])
 
+    console.log('token', user.token,'localstore', JSON.parse(localStorage.getItem('user')) )
     useEffect( () => {
         if (user.token !== undefined){
                 renderApp()
@@ -46,8 +44,8 @@ const App = () => {
         <UserContext.Provider value={{user, userDispatch}}>
             <TaskContext.Provider value={{tasks, tasksDispatch}} >
                 {!!isAuth ?
-                    <AppRouter history={history}/> :
-                    <LoginPage rxenderApp={renderApp} /> }
+                    <AppRouter/> :
+                    <LoginPage /> }
             </TaskContext.Provider>
         </UserContext.Provider>)
 }

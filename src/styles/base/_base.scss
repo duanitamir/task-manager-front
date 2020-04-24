@@ -1,0 +1,13 @@
+*{
+}
+
+html{
+  font-size: 62.5%;   // 16 * 0.625 = 10 => 2.2rem is 22px!
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background: $dark-grey;
+}

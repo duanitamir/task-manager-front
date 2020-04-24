@@ -4,11 +4,11 @@ const Task = ({completed, description, _id, completeTask}) => {
 
 
     return (
-        <div>
-    <h2>{description}</h2>
-    <div>Completed: {completed? 'yes' : 'no'}</div>
-            <button onClick={()=>{ completeTask(_id) }}> Done </button>
-    </div>
+        <div className='task-container '>
+            <div className='task-container__description'>{description}</div>
+            <div className='task-container__completed'>Completed: {completed? 'yes' : 'no'}</div>
+                   <div className='button-container'> <button className='button' onClick={()=>{ completeTask(_id, completed) }}> Done </button> </div>
+        </div>
     )
 }
 

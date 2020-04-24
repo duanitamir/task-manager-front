@@ -9,7 +9,6 @@ const TasksApp = () => {
     const { user } = useContext(UserContext);
     const [loading, setLoading] = useState(false);
     const { tasksDispatch } = useContext(TaskContext);
-    const tokenData =  user.token;
     const userData =  user.user;
 
     useEffect( () => {

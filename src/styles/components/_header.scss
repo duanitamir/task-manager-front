@@ -1,3 +1,15 @@
 .header{
-  background: green;
+  background: $dark-grey;
+  padding: 10px;
+}
+
+.header__title{
+  display: block;
+  text-decoration: none;
+  color: $off-white;
+}
+
+.header__nav{
+  display: flex;
+  justify-content: space-between;
 }
