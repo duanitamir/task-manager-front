@@ -22,12 +22,24 @@ const TaskList = (props) => {
         setState(update+1)
     }
 
+    const removeTask = (id) => {
+        console.log(id)
+        tasksDispatch({
+            type:'REMOVE_TASK',
+            token: user.token,
+            id
+        })
+        setState(update-1)
+    }
 
     return (
 
         <div className=' task-list content-container'>
-            {tasks.length > 0 ? tasks.map( task => <Task key={task._id} {...task} completeTask={completeTask}/>) : <div></div>}
-
+            {tasks.length > 0 ? tasks.map( task => <Task
+                key={task._id}
+                {...task}
+                completeTask={completeTask}
+                removeTask={removeTask}/>) : <div></div>}
         </div>
     )
 }

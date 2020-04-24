@@ -63294,7 +63294,8 @@ var Task = function Task(_ref) {
       description = _ref.description,
       _id = _ref._id,
       completeTask = _ref.completeTask,
-      createdAt = _ref.createdAt;
+      createdAt = _ref.createdAt,
+      removeTask = _ref.removeTask;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(completed),
       _useState2 = _slicedToArray(_useState, 2),
@@ -63316,7 +63317,10 @@ var Task = function Task(_ref) {
       completeTask(_id, completed);
     }
   }, " Do Again"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "button"
+    className: "button",
+    onClick: function onClick() {
+      removeTask(_id);
+    }
   }, "Remove Task")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "button-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -63552,13 +63556,24 @@ var TaskList = function TaskList(props) {
     setState(update + 1);
   };
 
+  var removeTask = function removeTask(id) {
+    console.log(id);
+    tasksDispatch({
+      type: 'REMOVE_TASK',
+      token: user.token,
+      id: id
+    });
+    setState(update - 1);
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: " task-list content-container"
   }, tasks.length > 0 ? tasks.map(function (task) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Task__WEBPACK_IMPORTED_MODULE_1__["default"], _extends({
       key: task._id
     }, task, {
-      completeTask: completeTask
+      completeTask: completeTask,
+      removeTask: removeTask
     }));
   }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
 };
@@ -63656,6 +63671,22 @@ var taskReducer = function taskReducer() {
       return [].concat(_toConsumableArray(state), [task]);
 
     case 'REMOVE_TASK':
+      var tasks = fetch("https://task-manager-duani.herokuapp.com/tasks/".concat(action.id), {
+        method: 'DELETE',
+        headers: {
+          Authorization: "Bearer ".concat(action.token),
+          'Postman-Token': 'dad7fd97-7fa6-44f0-91f3-44222de56e4f',
+          'cache-control': 'no-cache'
+        }
+      }).then(function (data) {
+        console.log('deleted');
+      }).then(function (res) {
+        return state.filter(function (task) {
+          return task.id !== action.id;
+        });
+      })["catch"](function (e) {
+        return e;
+      });
       return state.filter(function (task) {
         return task.id !== action.id;
       });
