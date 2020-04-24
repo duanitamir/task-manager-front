@@ -12,7 +12,7 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
                         'Content-Type': 'application/json' },
                 body: JSON.stringify({ description: action.task }),
                 json: true }).then((response) =>  response.json())
-                .then((json) => json).then( res => { console.log(res)})
+                .then((json) => json)
                 .catch(e=>{ console.log(e);})
 
             console.log(task)

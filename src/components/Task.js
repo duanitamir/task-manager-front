@@ -1,13 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
+import moment from 'moment';
+const Task = ({completed, description, _id, completeTask, createdAt }) => {
 
-const Task = ({completed, description, _id, completeTask}) => {
-
-
+    const [complete, setCompleted ] = useState(completed)
     return (
-        <div className='task-container '>
+        <div className={ complete? 'task-completed task-container': 'task-container'}>
+            <div className='task-container__createdAt'>{moment(createdAt).format('MMM Do YY')}</div>
             <div className='task-container__description'>{description}</div>
-            <div className='task-container__completed'>Completed: {completed? 'yes' : 'no'}</div>
-                   <div className='button-container'> <button className='button' onClick={()=>{ completeTask(_id, completed) }}> Done </button> </div>
+
+                {completed?
+                    <div className=' button-container--completed button-container'>
+                        <button className='button' onClick={()=>{
+                            setCompleted(!completed)
+                            completeTask(_id, completed)}}> Do Again</button>
+                        <button className='button'>Remove Task</button>
+                    </div>
+                   : <div className='button-container'>
+                        <button className='button' onClick={()=>{
+                            setCompleted(!completed)
+                            completeTask(_id, completed)}}> Done </button>
+                    </div>}
         </div>
     )
 }

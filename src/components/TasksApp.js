@@ -1,4 +1,6 @@
 import React, { useEffect, useState ,useContext} from "react";
+
+import LoadingPage from './LoadingPage'
 import TasksList from './TasksList'
 import TaskContext from '../context/tasks-context'
 import UserContext from '../context/user-context'
@@ -23,7 +25,7 @@ const TasksApp = () => {
     return(
             <div>
                 <div className="panel"> </div>
-                {loading ?  <TasksList /> : <div> Loading... </div>}
+                {loading ?  <TasksList /> : <LoadingPage /> }
             </div>
         )
 }

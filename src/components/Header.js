@@ -24,7 +24,8 @@ const Header = () =>  {
 
                 <div className="header__container">
                     <h1 > <Link className='header__title' to={'/dashboard'}> Task Manager App</Link></h1>
-                    <div className='header__subtitle'> This is a div that explain what this app does </div>
+                    <div className='header__subtitle'> Manage your daily tasks in a click</div>
+
                 </div>
 
                 <button onClick={scrollAddTask} className='button__new-task'>Create a new Task</button>

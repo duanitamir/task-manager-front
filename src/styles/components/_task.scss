@@ -9,15 +9,37 @@
   border-bottom: 0.6rem solid darken($grey, 10%);
 }
 
+.task-completed{
+  background: darken($dark-grey, 10%);
+  border-bottom: 0.6rem solid darken($dark-grey, 15%);
+
+
+}
 .tasks-list{
   display: flex;
 }
 
 .task-container__description{
+  font-size: 1.4rem;
+  color: lighten($light-pink, 5%);
   text-align: center;
-  font-size: 2rem;
 }
 
-.task-container__completed{
+.task-container__createdAt{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: darken($light-pink, 10%);
+}
 
+.button-container--completed{
+  text-align: center;
+  button{
+    margin-left: 5px;
+  }
+}
+
+.button-container{
+  position: relative;
+  top:60px
 }
