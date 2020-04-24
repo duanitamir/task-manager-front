@@ -1,32 +1,30 @@
-import React,{useContext} from 'react';
+import React, {useContext} from 'react';
 import { Router, Route, Switch } from "react-router-dom";
+import createHistory from "history/createBrowserHistory";
 
 import AddTask from '../components/AddTask';
-import Header from '../components/Header'
 import LoginPage from "../components/LoginPage";
 import {PublicRoute} from "./PublicRouter";
 import {PrivateRoute} from "./PrivateRoute";
 import TasksApp from '../components/TasksApp';
 import UserContext from "../context/user-context";
-import createHistory from "history/createBrowserHistory";
+import SignIn from '../components/SignIn'
 
 
 export const history = createHistory();
 
 export default () =>{
 
-    const {user} = useContext(UserContext)
+    const {user} = useContext(UserContext);
 
     return (
         <Router history={history}>
-            <div>
-                <Header />
             <Switch>
-                <PublicRoute path={'/'} isAuth={!!user.token} component={LoginPage} exact/>
-                <Route path={'/create'}  isAuth={!!user.token}  component={AddTask}/>
-                <Route path={'/dashboard'}  isAuth={!!user.token}  component={TasksApp}/>
+                <PublicRoute path={'/'} isAuthenticated={!!user.token} component={LoginPage} exact/>
+                <PublicRoute path={'/register'} isAuthenticated={!!user.token} component={SignIn} />
+                <PrivateRoute path={'/create'} isAuthenticated={!!user.token}  component={AddTask} />
+                <PrivateRoute path={'/dashboard'} isAuthenticated={!!user.token} component={TasksApp} />
             </Switch>
-            </div>
         </Router>
     )
 }

@@ -27,6 +27,7 @@ const TaskList = (props) => {
 
         <div className=' task-list content-container'>
             {tasks.length > 0 ? tasks.map( task => <Task key={task._id} {...task} completeTask={completeTask}/>) : <div>No Tasks to render</div>}
+
         </div>
     )
 }

@@ -1,12 +1,11 @@
-import React,{useContext} from 'react'
-import { Route, Redirect } from 'react-router-dom'
-import UserContext from '../context/user-context'
+import React from 'react'
+import {Redirect, Route} from 'react-router-dom'
 
-export const PublicRoute = ({isAuth, component: Component, ...rest}) => {
+export const PublicRoute =({isAuthenticated, component: Component, ...rest })  => {
 
     return(
-        <Route { ...rest } component={ (props) => (isAuth?
-                (<Redirect to='/dashboard'/>) : (<Component {...props}/>)
-        )}/>
+        <Route {...rest} component={ (props)=>(
+            isAuthenticated ? (<Redirect to="/dashboard"/>) : (<Component {...props}/>)
+        )} />
     );
 }

@@ -7,25 +7,34 @@ const TaskForm = (props) =>{
 
     const { user } = useContext(UserContext)
     const { tasks, tasksDispatch } = useContext(TaskContext);
+    const [count, setCount ] = useState(0)
 
     const [description, setDescription] = useState('');
 
-    const handleOnSubmit = (e) => {
-        e.preventDefault();
-        console.log(description)
-        console.log(tasksDispatch)
-
+    const handleOnSubmit = () => {
         tasksDispatch({
-            type:'ADD_EXPENSE',
+            type:'ADD_TASK',
             task: description,
+            token: user.token
         })
+        setCount(count +1)
     }
 
 
-    return (<form onSubmit={handleOnSubmit}>
-        <input value ={description} onChange={ e=> setDescription(e.target.value)} type="text"/>
-        <button>Add Task</button>
-    </form>)
+    return (
+        <div>
+            <div className='form__title'>Add a new Task</div>
+            <form onSubmit={handleOnSubmit}>
+                <input
+                    className='form__input'
+                    value ={description}
+                    onChange={ e=> setDescription(e.target.value)}
+                    type="text"/>
+
+                <br/>
+                <button className='button'>Add Task</button>
+            </form>
+        </div>)
 
 }
 

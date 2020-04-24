@@ -3,8 +3,10 @@
   border-radius: 2px;
   display: inline-block;
   margin: 10px;
-  width: 250px;
-  padding: 15px;
+  width: 200px;
+  height: 150px;
+  //padding: 30px 15px;
+  border-bottom: 0.6rem solid darken($grey, 10%);
 }
 
 .tasks-list{
@@ -15,7 +17,6 @@
   text-align: center;
   font-size: 2rem;
 }
-
 
 .task-container__completed{
 

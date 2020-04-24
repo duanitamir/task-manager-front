@@ -1,12 +1,17 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom'
+import React,{useContext} from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import Header from "../components/Header";
+import Footer from '../components/Footer'
 
 
+export const PrivateRoute =({isAuthenticated, component: Component, ...rest })  => {
 
-
-export const PrivateRoute = ({ isAuth, component: Component, ...rest}) => {
-
-    return (
-        <Route {...rest} component={(props) =>  <div><Component {...props}/> </div>}/>
+    return(
+        <div>
+            <Header />
+            <Component { ...rest}/>
+            <Footer />
+        </div>
     )
-};
+
+}

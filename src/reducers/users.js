@@ -16,6 +16,21 @@ const userReducer = (state = {user:null}, action) => {
             localStorage.removeItem('user');
             localStorage.removeItem('token');
             return ({});
+
+
+        case 'SIGN_IN':
+            fetch(`https://task-manager-duani.herokuapp.com/users`, {
+                method: 'POST',
+                headers:
+                    { 'Postman-Token': '1ac860e2-7214-468c-821f-b9c3c8bd10ec',
+                        'cache-control': 'no-cache',
+                        'Content-Type': 'application/json' },
+                body:
+                    { name: action.name,
+                        age : action.age,
+                        email: action.email,
+                        password: action.password }})
+                .then( data => {console.log(data)})
         default:
                 return state;
     }

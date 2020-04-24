@@ -32,7 +32,6 @@ const App = () => {
         }
     },[])
 
-    console.log('token', user.token,'localstore', JSON.parse(localStorage.getItem('user')) )
     useEffect( () => {
         if (user.token !== undefined){
                 renderApp()
