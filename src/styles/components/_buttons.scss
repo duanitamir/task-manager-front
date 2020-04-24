@@ -2,6 +2,8 @@
   color: $off-white;
   background: $dark-pink;
   border: none;
+  border-bottom: 1px solid lighten($dark-pink, 10%);
+  border-radius: 1px;
   font-weight: 100;
   font-size: 1.4rem;
   margin: 1rem 0 0 0;
@@ -9,4 +11,13 @@
 
 .button-container{
   text-align: center;
+}
+
+.button__new-task{
+  border: none;
+  color: $off-white;
+  font-size: 1.6rem;
+  position: relative;
+  top: 80px;
+  background: transparent;
 }

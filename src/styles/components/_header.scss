@@ -1,7 +1,6 @@
 .header{
   background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url("/images/header.jpeg");
   padding: 10px;
-  text-align: center;
   height:250px;
   background-size: cover;
   h1{
@@ -10,6 +9,12 @@
   }
 
 }
+
+.header__container{
+  text-align: center;
+
+}
+
 
 .header__title{
   display: block;
@@ -24,4 +29,9 @@
 .header__nav{
   display: flex;
   justify-content: space-between;
+}
+
+.header__button--logout{
+  position: absolute;
+  right: 40px;
 }

@@ -11454,7 +11454,7 @@ module.exports = exports['default'];
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  font-family: helvetica, arial, sans-serif;\n  font-size: 1.6rem;\n  line-height: 1.6;\n  background: #3f3f3f; }\n\n.button {\n  color: #ffffff;\n  background: #e2566d;\n  border: none;\n  font-weight: 100;\n  font-size: 1.4rem;\n  margin: 1rem 0 0 0; }\n\n.button-container {\n  text-align: center; }\n\n.header {\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/images/header.jpeg\");\n  padding: 10px;\n  text-align: center;\n  height: 250px;\n  background-size: cover; }\n  .header h1 {\n    font-weight: 300;\n    font-size: 4rem; }\n\n.header__title {\n  display: block;\n  text-decoration: none;\n  color: #ffffff; }\n\n.header__subtitle {\n  color: #ffffff; }\n\n.header__nav {\n  display: flex;\n  justify-content: space-between; }\n\n.footer {\n  height: 200px;\n  background-image: linear-gradient(#6e6e6e, #3f3f3f);\n  text-align: center;\n  padding: 20px; }\n\n.form__input {\n  background: #3f3f3f;\n  color: #ffffff;\n  font-size: 1.5rem;\n  padding: 10px;\n  margin: 20px 0;\n  width: 50vw;\n  height: 30px;\n  line-height: 1.6rem;\n  border: none;\n  display: inline-block; }\n\n.form__title {\n  color: #ffffff;\n  font-size: 2rem; }\n\n.task-container {\n  background: #6e6e6e;\n  border-radius: 2px;\n  display: inline-block;\n  margin: 10px;\n  width: 200px;\n  height: 150px;\n  border-bottom: 0.6rem solid #555555; }\n\n.tasks-list {\n  display: flex; }\n\n.task-container__description {\n  text-align: center;\n  font-size: 2rem; }\n\n.content-container {\n  margin: 0 auto;\n  padding: 0 1.5rem;\n  max-width: 90rem;\n  background: #3f3f3f;\n  height: 70vh;\n  overflow: auto; }\n\n.panel {\n  background: #6e6e6e;\n  height: 120px;\n  margin: 0 0 30px 0; }\n", ""]);
+exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  font-family: helvetica, arial, sans-serif;\n  font-size: 1.6rem;\n  line-height: 1.6;\n  background: #3f3f3f; }\n\n.button {\n  color: #ffffff;\n  background: #e2566d;\n  border: none;\n  border-bottom: 1px solid #e98293;\n  border-radius: 1px;\n  font-weight: 100;\n  font-size: 1.4rem;\n  margin: 1rem 0 0 0; }\n\n.button-container {\n  text-align: center; }\n\n.button__new-task {\n  border: none;\n  color: #ffffff;\n  font-size: 1.6rem;\n  position: relative;\n  top: 80px;\n  background: transparent; }\n\n.header {\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/images/header.jpeg\");\n  padding: 10px;\n  height: 250px;\n  background-size: cover; }\n  .header h1 {\n    font-weight: 300;\n    font-size: 4rem; }\n\n.header__container {\n  text-align: center; }\n\n.header__title {\n  display: block;\n  text-decoration: none;\n  color: #ffffff; }\n\n.header__subtitle {\n  color: #ffffff; }\n\n.header__nav {\n  display: flex;\n  justify-content: space-between; }\n\n.header__button--logout {\n  position: absolute;\n  right: 40px; }\n\n.footer {\n  height: 200px;\n  background-image: linear-gradient(#6e6e6e, #3f3f3f);\n  text-align: center;\n  padding: 20px; }\n\n.form__input {\n  background: #3f3f3f;\n  color: #ffffff;\n  font-size: 1.5rem;\n  padding: 10px;\n  margin: 20px 0;\n  width: 50vw;\n  height: 30px;\n  line-height: 1.6rem;\n  border: none;\n  display: inline-block; }\n\n.form__title {\n  color: #ffffff;\n  font-size: 2rem; }\n\n.task-container {\n  background: #6e6e6e;\n  border-radius: 2px;\n  display: inline-block;\n  margin: 10px;\n  width: 200px;\n  height: 150px;\n  border-bottom: 0.6rem solid #555555; }\n\n.tasks-list {\n  display: flex; }\n\n.task-container__description {\n  text-align: center;\n  font-size: 2rem; }\n\n.content-container {\n  margin: 0 auto;\n  padding: 0 1.5rem;\n  max-width: 90rem;\n  background: #3f3f3f;\n  height: 70vh;\n  overflow: auto; }\n\n.panel {\n  background: #6e6e6e;\n  height: 120px;\n  margin: 0 0 30px 0; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -45353,20 +45353,28 @@ var Header = function Header() {
     _routers_AppRouter__WEBPACK_IMPORTED_MODULE_3__["history"].push('/');
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  var scrollAddTask = function scrollAddTask() {
+    document.getElementsByClassName('footer')[0].scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "header__button--logout button",
+    onClick: handleLogout
+  }, "Logout"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header__container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "header__title",
     to: '/dashboard'
   }, " Task Manager App")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "header__subtitle"
-  }, " This is a div that explain what this app does "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "header__title",
-    to: '/create'
-  }, "Create a new Task"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "button",
-    onClick: handleLogout
-  }, "Logout"));
+  }, " This is a div that explain what this app does ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: scrollAddTask,
+    className: "button__new-task"
+  }, "Create a new Task")));
 };
 
 

@@ -13,13 +13,26 @@ const Header = () =>  {
         history.push('/');
     }
 
+    const scrollAddTask = () => {
+        document.getElementsByClassName('footer')[0].scrollIntoView({ behavior: 'smooth'})
+    }
 
-    return (<div className='header'>
-            <h1 > <Link className='header__title' to={'/dashboard'}> Task Manager App</Link></h1>
-            <div className='header__subtitle'> This is a div that explain what this app does </div>
-                <Link className='header__title' to={'/create'}>Create a new Task</Link>
-                <button className='button' onClick={handleLogout}>Logout</button>
+    return (
+        <div>
+            <div className='header'>
+                <button className='header__button--logout button' onClick={handleLogout}>Logout</button>
+
+                <div className="header__container">
+                    <h1 > <Link className='header__title' to={'/dashboard'}> Task Manager App</Link></h1>
+                    <div className='header__subtitle'> This is a div that explain what this app does </div>
+                </div>
+
+                <button onClick={scrollAddTask} className='button__new-task'>Create a new Task</button>
+
+            </div>
+
         </div>
+
     )
 }
 
