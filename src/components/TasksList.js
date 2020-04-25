@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState ,useEffect} from 'react';
 import Task from './Task'
 import TaskContext from '../context/tasks-context'
 import UserContext from '../context/user-context'
@@ -9,6 +9,7 @@ const TaskList = (props) => {
     const { tasks } = useContext(TaskContext)
     const { tasksDispatch } = useContext(TaskContext);
     const [update, setState] = useState(0)
+    const [refresh, setRefresh] = useState(0)
 
     const completeTask = (id, completed) => {
         let taskIndex = tasks.findIndex( task => task._id === id); // wanted task
@@ -23,14 +24,15 @@ const TaskList = (props) => {
     }
 
     const removeTask = (id) => {
-        console.log(id)
         tasksDispatch({
             type:'REMOVE_TASK',
             token: user.token,
             id
         })
-        setState(update-1)
+        setState(update+1)
+        setState(update+1)
     }
+
 
     return (
 

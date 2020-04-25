@@ -62979,23 +62979,20 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 /*!***********************************!*\
   !*** ./src/components/AddTask.js ***!
   \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return AddTask; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _TaskForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TaskForm */ "./src/components/TaskForm.js");
-
-
-
-var AddTask = function AddTask() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Add task page"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskForm__WEBPACK_IMPORTED_MODULE_1__["default"], null));
-};
-
-
+// import React from 'react';
+// import TaskForm from './TaskForm'
+//
+// //
+// // const AddTask = () =>
+// //     <div>
+// //         <h1>Add task page</h1>
+// //         <TaskForm />
+// //     </div>
+// //
+// // export { AddTask as default }
 
 /***/ }),
 
@@ -63061,13 +63058,13 @@ var Header = function Header() {
 
   var panelItems = [{
     image: _public_images_icons_cloud_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
-    text: "Use cloud base database \n to store your tasks and ideas"
+    text: "Use cloud base database to store your tasks and ideas"
   }, {
     image: _public_images_icons_pencil_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
     text: 'Easily add, mark as done and remove tasks and idea from the board'
   }, {
     image: _public_images_icons_team_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
-    text: 'Work with a team and share ideas on the task board'
+    text: 'Work with a team and share your ideas on the task board'
   }];
 
   var handleLogout = function handleLogout() {
@@ -63791,6 +63788,11 @@ var TaskList = function TaskList(props) {
       update = _useState2[0],
       setState = _useState2[1];
 
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      refresh = _useState4[0],
+      setRefresh = _useState4[1];
+
   var completeTask = function completeTask(id, completed) {
     var taskIndex = tasks.findIndex(function (task) {
       return task._id === id;
@@ -63807,13 +63809,13 @@ var TaskList = function TaskList(props) {
   };
 
   var removeTask = function removeTask(id) {
-    console.log(id);
     tasksDispatch({
       type: 'REMOVE_TASK',
       token: user.token,
       id: id
     });
-    setState(update - 1);
+    setState(update + 1);
+    setState(update + 1);
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -63922,24 +63924,23 @@ var taskReducer = function taskReducer() {
       return [].concat(_toConsumableArray(state), [task]);
 
     case 'REMOVE_TASK':
-      fetch("https://task-manager-duani.herokuapp.com/tasks/".concat(action.id), {
+      var tasks = fetch("https://task-manager-duani.herokuapp.com/tasks/".concat(action.id), {
         method: 'DELETE',
         headers: {
           Authorization: "Bearer ".concat(action.token),
           'Postman-Token': 'dad7fd97-7fa6-44f0-91f3-44222de56e4f',
           'cache-control': 'no-cache'
         }
-      }).then(function (data) {
-        console.log('deleted');
-      }).then(function (res) {
-        return state.filter(function (task) {
-          return task.id !== action.id;
-        });
+      }).then(function () {
+        console.log('removed');
       })["catch"](function (e) {
         return e;
       });
+      console.log(state.filter(function (task) {
+        return task._id !== action.id;
+      }));
       return state.filter(function (task) {
-        return task.id !== action.id;
+        return task._id !== action.id;
       });
 
     case 'EDIT_TASK':
@@ -64064,6 +64065,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var history_createBrowserHistory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! history/createBrowserHistory */ "./node_modules/history/createBrowserHistory.js");
 /* harmony import */ var history_createBrowserHistory__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(history_createBrowserHistory__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_AddTask__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/AddTask */ "./src/components/AddTask.js");
+/* harmony import */ var _components_AddTask__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_AddTask__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_LoginPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/LoginPage */ "./src/components/LoginPage.js");
 /* harmony import */ var _PublicRouter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PublicRouter */ "./src/routers/PublicRouter.js");
 /* harmony import */ var _PrivateRoute__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PrivateRoute */ "./src/routers/PrivateRoute.js");
@@ -64095,10 +64097,6 @@ var history = history_createBrowserHistory__WEBPACK_IMPORTED_MODULE_2___default(
     isAuthenticated: !!user.token,
     component: _components_LoginPage__WEBPACK_IMPORTED_MODULE_4__["default"],
     exact: true
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PrivateRoute__WEBPACK_IMPORTED_MODULE_6__["PrivateRoute"], {
-    path: '/create',
-    isAuthenticated: !!user.token,
-    component: _components_AddTask__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PrivateRoute__WEBPACK_IMPORTED_MODULE_6__["PrivateRoute"], {
     path: '/dashboard',
     isAuthenticated: !!user.token,

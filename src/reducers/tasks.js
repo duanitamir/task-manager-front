@@ -19,16 +19,19 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
             return([...state, task]);
 
         case 'REMOVE_TASK':
-            fetch(`https://task-manager-duani.herokuapp.com/tasks/${action.id}`, {
+            const tasks = fetch(`https://task-manager-duani.herokuapp.com/tasks/${action.id}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${action.token}`,
                     'Postman-Token': 'dad7fd97-7fa6-44f0-91f3-44222de56e4f',
                     'cache-control': 'no-cache'}})
-                .then( data => { console.log('deleted')})
-                .then( res => state.filter( (task) => task.id !== action.id))
+                .then( () =>  {console.log('removed')})
                 .catch(e => e)
-            return state.filter( (task) => task.id !== action.id)
+
+            console.log( state.filter( (task) => task._id !== action.id) )
+
+            return  state.filter( (task) => task._id !== action.id)
+
 
         case 'EDIT_TASK':
             return state.map( item => (item.id === action.id) ? ([...item, ...action.update]) : (item))

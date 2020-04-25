@@ -16,9 +16,9 @@ const Header = () =>  {
     const {userDispatch} = useContext(UserContext)
 
     const panelItems = [
-        {image:cloud, text:`Use cloud base database \n to store your tasks and ideas`},
+        {image:cloud, text:`Use cloud base database to store your tasks and ideas`},
         {image:actions, text: 'Easily add, mark as done and remove tasks and idea from the board'},
-        {image:team, text:'Work with a team and share ideas on the task board'}
+        {image:team, text:'Work with a team and share your ideas on the task board'}
     ]
 
 
