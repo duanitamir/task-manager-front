@@ -35,3 +35,36 @@
   position: absolute;
   right: 40px;
 }
+
+
+
+
+.panel {
+  background: darken($off-white, 20%);
+  height: 150px;
+  margin: 0 0 30px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+.panel__item{
+  display: inline-block;
+  padding: 20px 40px ;
+}
+
+.panel__img{
+  height: 60px;
+}
+
+.panel__text{
+  color: white;
+  font-size: 1.3rem;
+
+}
+
+.panel-container{
+  text-align: center;
+
+}

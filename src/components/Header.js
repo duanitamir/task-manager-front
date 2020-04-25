@@ -1,12 +1,26 @@
 import React,{useContext} from 'react';
 import { Link } from "react-router-dom";
 
+import cloud from '../../public/images/icons/cloud.svg'
+import idea from '../../public/images/icons/creativity.svg'
+import actions from '../../public/images/icons/pencil.svg'
+import team from '../../public/images/icons/team.svg'
+
 import UserContext from '../context/user-context'
 import {history} from "../routers/AppRouter";
+import PanelItem from './PanelItem'
+
 
 const Header = () =>  {
 
     const {userDispatch} = useContext(UserContext)
+
+    const panelItems = [
+        {image:cloud, text:`Use cloud base database \n to store your tasks and ideas`},
+        {image:actions, text: 'Easily add, mark as done and remove tasks and idea from the board'},
+        {image:team, text:'Work with a team and share ideas on the task board'}
+    ]
+
 
     const handleLogout = () => {
         userDispatch({type:'LOGOUT'})
@@ -30,6 +44,9 @@ const Header = () =>  {
 
                 <button onClick={scrollAddTask} className='button__new-task'>Create a new Task</button>
 
+            </div>
+            <div className="panel">
+                {panelItems.map(item=><PanelItem image={item.image} text={item.text} />)}
             </div>
 
         </div>

@@ -25,7 +25,6 @@ const TasksApp = () => {
 
     return(
             <div>
-                <div className="panel"> </div>
                 {loading ?  <TasksList /> : <LoadingPage /> }
             </div>
         )

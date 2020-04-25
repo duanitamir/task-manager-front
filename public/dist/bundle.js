@@ -11454,7 +11454,7 @@ module.exports = exports['default'];
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  font-family: helvetica, arial, sans-serif;\n  font-size: 1.6rem;\n  line-height: 1.6;\n  background: #3f3f3f; }\n\n.button {\n  color: #ffffff;\n  background: #e2566d;\n  border: none;\n  border-radius: 4px;\n  font-weight: semibold;\n  padding: 5px 10px;\n  font-size: 1.2rem;\n  margin: 1rem 0 0 0; }\n\n.button--secondary {\n  color: #e2566d;\n  font-weight: 200;\n  background: #ffffff; }\n\n.button-container__login {\n  margin: 1.4rem 0;\n  display: flex;\n  justify-content: space-between; }\n\n.button__new-task {\n  border: none;\n  color: #ffffff;\n  font-size: 1.6rem;\n  position: relative;\n  top: 80px;\n  background: transparent; }\n\n.x-button {\n  background: none;\n  border: none; }\n  .x-button img {\n    height: 15px;\n    position: relative;\n    left: 12px;\n    top: 4px; }\n\n.header {\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/images/header.jpeg\");\n  padding: 10px;\n  height: 250px;\n  background-size: cover; }\n  .header h1 {\n    font-weight: 300;\n    font-size: 4rem; }\n\n.header__container {\n  text-align: center; }\n\n.header__title {\n  display: block;\n  text-decoration: none;\n  color: #ffffff; }\n\n.header__subtitle {\n  color: #ffffff; }\n\n.header__nav {\n  display: flex;\n  justify-content: space-between; }\n\n.header__button--logout {\n  position: absolute;\n  right: 40px; }\n\n.footer {\n  height: 200px;\n  background-image: linear-gradient(#6e6e6e, #3f3f3f);\n  text-align: center;\n  padding: 20px; }\n\n.form__input {\n  background: #3f3f3f;\n  color: #ffffff;\n  font-size: 1.5rem;\n  padding: 10px;\n  margin: 20px 0;\n  line-height: 1.6rem;\n  border: none;\n  display: inline-block; }\n\n.form__input--add_task {\n  width: 50vw;\n  height: 30px; }\n\n.form__input--login {\n  background: #6e6e6e;\n  color: #ffffff;\n  font-size: 1.5rem;\n  padding: 7px;\n  line-height: 1.6rem;\n  border: none;\n  display: block;\n  width: 135px; }\n\n.form__title {\n  color: #ffffff;\n  font-size: 2rem; }\n\n.box_layout {\n  align-items: center;\n  background: url(\"/images/header.jpeg\");\n  background-size: cover;\n  display: flex;\n  height: 100vh;\n  justify-content: center;\n  width: 100vw; }\n\n.box {\n  border-radius: 2px;\n  opacity: 90%;\n  border: none;\n  font-weight: 200;\n  font-size: 1.2rem;\n  height: 180px;\n  background: #3f3f3f;\n  padding: 20px;\n  width: 150px; }\n\n.box-form {\n  color: #ecc9c8; }\n\n.box--register {\n  height: 280px; }\n\n.box-title {\n  color: white;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.loader {\n  align-items: center;\n  display: flex;\n  height: 100vh;\n  justify-content: center;\n  width: 100vw; }\n\n.loader__image {\n  height: 6rem;\n  width: 6rem; }\n\n.task-container {\n  background: #6e6e6e;\n  border-radius: 2px;\n  display: inline-block;\n  margin: 10px;\n  width: 200px;\n  word-break: break-all;\n  padding: 8px;\n  height: 150px;\n  overflow: scroll;\n  border-bottom: 0.6rem solid #555555; }\n\n.task-completed {\n  background: #262626;\n  border-bottom: 0.6rem solid #191919; }\n\n.tasks-list {\n  display: flex; }\n\n.task-container__description {\n  font-size: 1.4rem;\n  color: #f3dcdb;\n  text-align: center; }\n\n.task-container__title {\n  text-align: center;\n  font-size: 1.5rem;\n  font-weight: 300;\n  color: #dfa4a2; }\n\n.button-container--completed {\n  text-align: center; }\n  .button-container--completed button {\n    margin-left: 5px; }\n\n.button-container {\n  position: relative;\n  text-align: center;\n  top: 20px; }\n\n.empty-task-list {\n  text-align: center;\n  color: #ffffff;\n  font-weight: 200;\n  font-size: 3rem; }\n\n.task-container__remove-task {\n  position: relative;\n  left: 35px; }\n\n.remove-task--done {\n  display: none; }\n\n.content-container {\n  margin: 0 auto;\n  padding: 0 1.5rem;\n  max-width: 90rem;\n  background: #3f3f3f;\n  height: 70vh;\n  overflow: auto; }\n\n.panel {\n  background: #6e6e6e;\n  height: 120px;\n  margin: 0 0 30px 0; }\n", ""]);
+exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  font-family: helvetica, arial, sans-serif;\n  font-size: 1.6rem;\n  line-height: 1.6;\n  background: #3f3f3f; }\n\n.button {\n  color: #ffffff;\n  background: #e2566d;\n  border: none;\n  border-radius: 4px;\n  font-weight: semibold;\n  padding: 5px 10px;\n  font-size: 1.2rem;\n  margin: 1rem 0 0 0; }\n\n.button--secondary {\n  color: #e2566d;\n  font-weight: 200;\n  background: #ffffff; }\n\n.button-container__login {\n  margin: 1.4rem 0;\n  display: flex;\n  justify-content: space-between; }\n\n.button__new-task {\n  border: none;\n  color: #ffffff;\n  font-size: 1.6rem;\n  position: relative;\n  top: 80px;\n  background: transparent; }\n\n.x-button {\n  background: none;\n  border: none; }\n  .x-button img {\n    height: 15px;\n    position: relative;\n    left: 12px;\n    top: 4px; }\n\n.header {\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/images/header.jpeg\");\n  padding: 10px;\n  height: 250px;\n  background-size: cover; }\n  .header h1 {\n    font-weight: 300;\n    font-size: 4rem; }\n\n.header__container {\n  text-align: center; }\n\n.header__title {\n  display: block;\n  text-decoration: none;\n  color: #ffffff; }\n\n.header__subtitle {\n  color: #ffffff; }\n\n.header__nav {\n  display: flex;\n  justify-content: space-between; }\n\n.header__button--logout {\n  position: absolute;\n  right: 40px; }\n\n.panel {\n  background: #cccccc;\n  height: 150px;\n  margin: 0 0 30px 0;\n  display: flex;\n  justify-content: space-evenly; }\n\n.panel__item {\n  display: inline-block;\n  padding: 20px 40px; }\n\n.panel__img {\n  height: 60px; }\n\n.panel__text {\n  color: white;\n  font-size: 1.3rem; }\n\n.panel-container {\n  text-align: center; }\n\n.footer {\n  height: 200px;\n  background-image: linear-gradient(#6e6e6e, #3f3f3f);\n  text-align: center;\n  padding: 20px; }\n\n.form__input {\n  background: #3f3f3f;\n  color: #ffffff;\n  font-size: 1.5rem;\n  padding: 10px;\n  margin: 20px 0;\n  line-height: 1.6rem;\n  border: none;\n  display: inline-block; }\n\n.form__input--add_task {\n  width: 50vw;\n  height: 30px; }\n\n.form__input--login {\n  background: #6e6e6e;\n  color: #ffffff;\n  font-size: 1.5rem;\n  padding: 7px;\n  line-height: 1.6rem;\n  border: none;\n  display: block;\n  width: 135px; }\n\n.form__title {\n  color: #ffffff;\n  font-size: 2rem; }\n\n.box_layout {\n  align-items: center;\n  background: url(\"/images/header.jpeg\");\n  background-size: cover;\n  display: flex;\n  height: 100vh;\n  justify-content: center;\n  width: 100vw; }\n\n.box {\n  border-radius: 2px;\n  opacity: 90%;\n  border: none;\n  font-weight: 200;\n  font-size: 1.2rem;\n  height: 180px;\n  background: #3f3f3f;\n  padding: 20px;\n  width: 150px; }\n\n.box-form {\n  color: #ecc9c8; }\n\n.box--register {\n  height: 280px; }\n\n.box-title {\n  color: white;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.loader {\n  align-items: center;\n  display: flex;\n  height: 100vh;\n  justify-content: center;\n  width: 100vw; }\n\n.loader__image {\n  height: 6rem;\n  width: 6rem; }\n\n.task-container {\n  background: #6e6e6e;\n  border-radius: 2px;\n  display: inline-block;\n  margin: 10px;\n  width: 200px;\n  word-break: break-all;\n  padding: 8px;\n  height: 150px;\n  overflow: scroll;\n  border-bottom: 0.6rem solid #555555; }\n\n.task-completed {\n  background: #262626;\n  border-bottom: 0.6rem solid #191919; }\n\n.tasks-list {\n  display: flex; }\n\n.task-container__description {\n  font-size: 1.4rem;\n  color: #f3dcdb;\n  text-align: center; }\n\n.task-container__title {\n  text-align: center;\n  font-size: 1.5rem;\n  font-weight: 300;\n  color: #dfa4a2; }\n\n.button-container--completed {\n  text-align: center; }\n  .button-container--completed button {\n    margin-left: 5px; }\n\n.button-container {\n  position: relative;\n  text-align: center;\n  top: 20px; }\n\n.empty-task-list {\n  text-align: center;\n  color: #ffffff;\n  font-weight: 200;\n  font-size: 3rem; }\n\n.task-container__remove-task {\n  position: relative;\n  left: 35px; }\n\n.remove-task--done {\n  display: none; }\n\n.content-container {\n  margin: 0 auto;\n  padding: 0 1.5rem;\n  max-width: 71rem;\n  background: #3f3f3f;\n  height: 70vh;\n  overflow: auto; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -62814,6 +62814,58 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./public/images/icons/cloud.svg":
+/*!***************************************!*\
+  !*** ./public/images/icons/cloud.svg ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "22da6bd64a33ed04936ed0f83cdb179a.svg");
+
+/***/ }),
+
+/***/ "./public/images/icons/creativity.svg":
+/*!********************************************!*\
+  !*** ./public/images/icons/creativity.svg ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "b0f3b84e5b5bf8d3adca3f16e13800b8.svg");
+
+/***/ }),
+
+/***/ "./public/images/icons/pencil.svg":
+/*!****************************************!*\
+  !*** ./public/images/icons/pencil.svg ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "accdcc70e97cf7dcc2a01cee3b09783a.svg");
+
+/***/ }),
+
+/***/ "./public/images/icons/team.svg":
+/*!**************************************!*\
+  !*** ./public/images/icons/team.svg ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "3e820d75319de6882e1c89c070a7267c.svg");
+
+/***/ }),
+
 /***/ "./public/images/rmv_icon.svg":
 /*!************************************!*\
   !*** ./public/images/rmv_icon.svg ***!
@@ -62986,22 +63038,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _context_user_context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/user-context */ "./src/context/user-context.js");
-/* harmony import */ var _routers_AppRouter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../routers/AppRouter */ "./src/routers/AppRouter.js");
+/* harmony import */ var _public_images_icons_cloud_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../public/images/icons/cloud.svg */ "./public/images/icons/cloud.svg");
+/* harmony import */ var _public_images_icons_creativity_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../public/images/icons/creativity.svg */ "./public/images/icons/creativity.svg");
+/* harmony import */ var _public_images_icons_pencil_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../public/images/icons/pencil.svg */ "./public/images/icons/pencil.svg");
+/* harmony import */ var _public_images_icons_team_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../public/images/icons/team.svg */ "./public/images/icons/team.svg");
+/* harmony import */ var _context_user_context__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../context/user-context */ "./src/context/user-context.js");
+/* harmony import */ var _routers_AppRouter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../routers/AppRouter */ "./src/routers/AppRouter.js");
+/* harmony import */ var _PanelItem__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./PanelItem */ "./src/components/PanelItem.js");
+
+
+
+
+
 
 
 
 
 
 var Header = function Header() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_user_context__WEBPACK_IMPORTED_MODULE_2__["default"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_user_context__WEBPACK_IMPORTED_MODULE_6__["default"]),
       userDispatch = _useContext.userDispatch;
+
+  var panelItems = [{
+    image: _public_images_icons_cloud_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+    text: "Use cloud base database \n to store your tasks and ideas"
+  }, {
+    image: _public_images_icons_pencil_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+    text: 'Easily add, mark as done and remove tasks and idea from the board'
+  }, {
+    image: _public_images_icons_team_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+    text: 'Work with a team and share ideas on the task board'
+  }];
 
   var handleLogout = function handleLogout() {
     userDispatch({
       type: 'LOGOUT'
     });
-    _routers_AppRouter__WEBPACK_IMPORTED_MODULE_3__["history"].push('/');
+    _routers_AppRouter__WEBPACK_IMPORTED_MODULE_7__["history"].push('/');
   };
 
   var scrollAddTask = function scrollAddTask() {
@@ -63025,7 +63098,14 @@ var Header = function Header() {
   }, " Manage your daily tasks in a click")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: scrollAddTask,
     className: "button__new-task"
-  }, "Create a new Task")));
+  }, "Create a new Task")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "panel"
+  }, panelItems.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PanelItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      image: item.image,
+      text: item.text
+    });
+  })));
 };
 
 
@@ -63304,6 +63384,41 @@ var LoginPage = function LoginPage(props) {
     setLocation: setLocation,
     handleRegister: handleRegister
   }))));
+};
+
+
+
+/***/ }),
+
+/***/ "./src/components/PanelItem.js":
+/*!*************************************!*\
+  !*** ./src/components/PanelItem.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PanelItem; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var PanelItem = function PanelItem(_ref) {
+  var image = _ref.image,
+      text = _ref.text;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "panel__item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "panel-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "panel__img",
+    src: image
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "panel-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "panel__text"
+  }, text)));
 };
 
 
@@ -63620,9 +63735,7 @@ var TasksApp = function TasksApp() {
       console.log(e);
     });
   }, [userData]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "panel"
-  }, " "), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TasksList__WEBPACK_IMPORTED_MODULE_2__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingPage__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TasksList__WEBPACK_IMPORTED_MODULE_2__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingPage__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
 
 
