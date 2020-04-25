@@ -16,9 +16,6 @@
   background: $off-white ;
 }
 
-.button-container{
-  text-align: center;
-}
 .button-container__login{
   margin: 1.4rem 0;
   display: flex;
@@ -32,4 +29,15 @@
   position: relative;
   top: 80px;
   background: transparent;
+}
+
+.x-button {
+  background: none;
+  border: none;
+  img{
+    height: 15px;
+    position: relative;
+    left: 12px;
+    top: 4px;
+  }
 }

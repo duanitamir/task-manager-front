@@ -39,7 +39,7 @@ const TaskList = (props) => {
                 key={task._id}
                 {...task}
                 completeTask={completeTask}
-                removeTask={removeTask}/>) : <div></div>}
+                removeTask={removeTask}/>) : <div className='empty-task-list'> Add new tasks down </div>}
         </div>
     )
 }

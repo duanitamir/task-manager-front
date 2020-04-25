@@ -11454,7 +11454,7 @@ module.exports = exports['default'];
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  font-family: helvetica, arial, sans-serif;\n  font-size: 1.6rem;\n  line-height: 1.6;\n  background: #3f3f3f; }\n\n.button {\n  color: #ffffff;\n  background: #e2566d;\n  border: none;\n  border-radius: 4px;\n  font-weight: semibold;\n  padding: 5px 10px;\n  font-size: 1.2rem;\n  margin: 1rem 0 0 0; }\n\n.button--secondary {\n  color: #e2566d;\n  font-weight: 200;\n  background: #ffffff; }\n\n.button-container {\n  text-align: center; }\n\n.button-container__login {\n  margin: 1.4rem 0;\n  display: flex;\n  justify-content: space-between; }\n\n.button__new-task {\n  border: none;\n  color: #ffffff;\n  font-size: 1.6rem;\n  position: relative;\n  top: 80px;\n  background: transparent; }\n\n.header {\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/images/header.jpeg\");\n  padding: 10px;\n  height: 250px;\n  background-size: cover; }\n  .header h1 {\n    font-weight: 300;\n    font-size: 4rem; }\n\n.header__container {\n  text-align: center; }\n\n.header__title {\n  display: block;\n  text-decoration: none;\n  color: #ffffff; }\n\n.header__subtitle {\n  color: #ffffff; }\n\n.header__nav {\n  display: flex;\n  justify-content: space-between; }\n\n.header__button--logout {\n  position: absolute;\n  right: 40px; }\n\n.footer {\n  height: 200px;\n  background-image: linear-gradient(#6e6e6e, #3f3f3f);\n  text-align: center;\n  padding: 20px; }\n\n.form__input {\n  background: #3f3f3f;\n  color: #ffffff;\n  font-size: 1.5rem;\n  padding: 10px;\n  margin: 20px 0;\n  line-height: 1.6rem;\n  border: none;\n  display: inline-block; }\n\n.form__input--add_task {\n  width: 50vw;\n  height: 30px; }\n\n.form__input--login {\n  background: #6e6e6e;\n  color: #ffffff;\n  font-size: 1.5rem;\n  padding: 7px;\n  line-height: 1.6rem;\n  border: none;\n  display: block;\n  width: 135px; }\n\n.form__title {\n  color: #ffffff;\n  font-size: 2rem; }\n\n.box_layout {\n  align-items: center;\n  background: url(\"/images/header.jpeg\");\n  background-size: cover;\n  display: flex;\n  height: 100vh;\n  justify-content: center;\n  width: 100vw; }\n\n.box {\n  border-radius: 2px;\n  opacity: 90%;\n  border: none;\n  font-weight: 200;\n  font-size: 1.2rem;\n  height: 180px;\n  background: #3f3f3f;\n  padding: 20px;\n  width: 150px; }\n\n.box-form {\n  color: #ecc9c8; }\n\n.box--register {\n  height: 280px; }\n\n.box-title {\n  color: white;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.loader {\n  align-items: center;\n  display: flex;\n  height: 100vh;\n  justify-content: center;\n  width: 100vw; }\n\n.loader__image {\n  height: 6rem;\n  width: 6rem; }\n\n.task-container {\n  background: #6e6e6e;\n  border-radius: 2px;\n  display: inline-block;\n  margin: 10px;\n  width: 200px;\n  height: 150px;\n  border-bottom: 0.6rem solid #555555; }\n\n.task-completed {\n  background: #262626;\n  border-bottom: 0.6rem solid #191919; }\n\n.tasks-list {\n  display: flex; }\n\n.task-container__description {\n  font-size: 1.4rem;\n  color: #f3dcdb;\n  text-align: center; }\n\n.task-container__createdAt {\n  text-align: center;\n  font-size: 1.5rem;\n  font-weight: 300;\n  color: #dfa4a2; }\n\n.button-container--completed {\n  text-align: center; }\n  .button-container--completed button {\n    margin-left: 5px; }\n\n.button-container {\n  position: relative;\n  top: 60px; }\n\n.content-container {\n  margin: 0 auto;\n  padding: 0 1.5rem;\n  max-width: 90rem;\n  background: #3f3f3f;\n  height: 70vh;\n  overflow: auto; }\n\n.panel {\n  background: #6e6e6e;\n  height: 120px;\n  margin: 0 0 30px 0; }\n", ""]);
+exports.push([module.i, "html {\n  font-size: 62.5%; }\n\nbody {\n  font-family: helvetica, arial, sans-serif;\n  font-size: 1.6rem;\n  line-height: 1.6;\n  background: #3f3f3f; }\n\n.button {\n  color: #ffffff;\n  background: #e2566d;\n  border: none;\n  border-radius: 4px;\n  font-weight: semibold;\n  padding: 5px 10px;\n  font-size: 1.2rem;\n  margin: 1rem 0 0 0; }\n\n.button--secondary {\n  color: #e2566d;\n  font-weight: 200;\n  background: #ffffff; }\n\n.button-container__login {\n  margin: 1.4rem 0;\n  display: flex;\n  justify-content: space-between; }\n\n.button__new-task {\n  border: none;\n  color: #ffffff;\n  font-size: 1.6rem;\n  position: relative;\n  top: 80px;\n  background: transparent; }\n\n.x-button {\n  background: none;\n  border: none; }\n  .x-button img {\n    height: 15px;\n    position: relative;\n    left: 12px;\n    top: 4px; }\n\n.header {\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/images/header.jpeg\");\n  padding: 10px;\n  height: 250px;\n  background-size: cover; }\n  .header h1 {\n    font-weight: 300;\n    font-size: 4rem; }\n\n.header__container {\n  text-align: center; }\n\n.header__title {\n  display: block;\n  text-decoration: none;\n  color: #ffffff; }\n\n.header__subtitle {\n  color: #ffffff; }\n\n.header__nav {\n  display: flex;\n  justify-content: space-between; }\n\n.header__button--logout {\n  position: absolute;\n  right: 40px; }\n\n.footer {\n  height: 200px;\n  background-image: linear-gradient(#6e6e6e, #3f3f3f);\n  text-align: center;\n  padding: 20px; }\n\n.form__input {\n  background: #3f3f3f;\n  color: #ffffff;\n  font-size: 1.5rem;\n  padding: 10px;\n  margin: 20px 0;\n  line-height: 1.6rem;\n  border: none;\n  display: inline-block; }\n\n.form__input--add_task {\n  width: 50vw;\n  height: 30px; }\n\n.form__input--login {\n  background: #6e6e6e;\n  color: #ffffff;\n  font-size: 1.5rem;\n  padding: 7px;\n  line-height: 1.6rem;\n  border: none;\n  display: block;\n  width: 135px; }\n\n.form__title {\n  color: #ffffff;\n  font-size: 2rem; }\n\n.box_layout {\n  align-items: center;\n  background: url(\"/images/header.jpeg\");\n  background-size: cover;\n  display: flex;\n  height: 100vh;\n  justify-content: center;\n  width: 100vw; }\n\n.box {\n  border-radius: 2px;\n  opacity: 90%;\n  border: none;\n  font-weight: 200;\n  font-size: 1.2rem;\n  height: 180px;\n  background: #3f3f3f;\n  padding: 20px;\n  width: 150px; }\n\n.box-form {\n  color: #ecc9c8; }\n\n.box--register {\n  height: 280px; }\n\n.box-title {\n  color: white;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.loader {\n  align-items: center;\n  display: flex;\n  height: 100vh;\n  justify-content: center;\n  width: 100vw; }\n\n.loader__image {\n  height: 6rem;\n  width: 6rem; }\n\n.task-container {\n  background: #6e6e6e;\n  border-radius: 2px;\n  display: inline-block;\n  margin: 10px;\n  width: 200px;\n  word-break: break-all;\n  padding: 8px;\n  height: 150px;\n  overflow: scroll;\n  border-bottom: 0.6rem solid #555555; }\n\n.task-completed {\n  background: #262626;\n  border-bottom: 0.6rem solid #191919; }\n\n.tasks-list {\n  display: flex; }\n\n.task-container__description {\n  font-size: 1.4rem;\n  color: #f3dcdb;\n  text-align: center; }\n\n.task-container__title {\n  text-align: center;\n  font-size: 1.5rem;\n  font-weight: 300;\n  color: #dfa4a2; }\n\n.button-container--completed {\n  text-align: center; }\n  .button-container--completed button {\n    margin-left: 5px; }\n\n.button-container {\n  position: relative;\n  text-align: center;\n  top: 20px; }\n\n.empty-task-list {\n  text-align: center;\n  color: #ffffff;\n  font-weight: 200;\n  font-size: 3rem; }\n\n.task-container__remove-task {\n  position: relative;\n  left: 35px; }\n\n.remove-task--done {\n  display: none; }\n\n.content-container {\n  margin: 0 auto;\n  padding: 0 1.5rem;\n  max-width: 90rem;\n  background: #3f3f3f;\n  height: 70vh;\n  overflow: auto; }\n\n.panel {\n  background: #6e6e6e;\n  height: 120px;\n  margin: 0 0 30px 0; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -62814,6 +62814,19 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./public/images/rmv_icon.svg":
+/*!************************************!*\
+  !*** ./public/images/rmv_icon.svg ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "0a687d06f1bc3d6f1aff8045faad2d09.svg");
+
+/***/ }),
+
 /***/ "./src/app.js":
 /*!********************!*\
   !*** ./src/app.js ***!
@@ -63382,6 +63395,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _public_images_rmv_icon_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../public/images/rmv_icon.svg */ "./public/images/rmv_icon.svg");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -63393,6 +63407,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -63413,8 +63428,20 @@ var Task = function Task(_ref) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: complete ? 'task-completed task-container' : 'task-container'
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "task-container__title"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "task-container__createdAt"
-  }, moment__WEBPACK_IMPORTED_MODULE_1___default()(createdAt).format('MMM Do YY')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, moment__WEBPACK_IMPORTED_MODULE_1___default()(createdAt).format('MMM Do YY')), !completed && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "task-container__remove-task"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "x-button ",
+    onClick: function onClick() {
+      removeTask(_id);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "id-img",
+    src: _public_images_rmv_icon_svg__WEBPACK_IMPORTED_MODULE_2__["default"]
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "task-container__description"
   }, description), completed ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: " button-container--completed button-container"
@@ -63685,7 +63712,9 @@ var TaskList = function TaskList(props) {
       completeTask: completeTask,
       removeTask: removeTask
     }));
-  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "empty-task-list"
+  }, " Add new tasks down "));
 };
 
 

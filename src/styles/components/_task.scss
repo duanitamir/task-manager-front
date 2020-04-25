@@ -4,8 +4,10 @@
   display: inline-block;
   margin: 10px;
   width: 200px;
+  word-break: break-all;
+  padding: 8px;
   height: 150px;
-  //padding: 30px 15px;
+  overflow:scroll;
   border-bottom: 0.6rem solid darken($grey, 10%);
 }
 
@@ -25,11 +27,14 @@
   text-align: center;
 }
 
-.task-container__createdAt{
+.task-container__title{
   text-align: center;
   font-size: 1.5rem;
   font-weight: 300;
   color: darken($light-pink, 10%);
+}
+.task-container__createdAt{
+
 }
 
 .button-container--completed{
@@ -41,5 +46,20 @@
 
 .button-container{
   position: relative;
-  top:60px
+  text-align: center;
+  top:20px
+}
+.empty-task-list{
+  text-align: center;
+  color: $off-white;
+  font-weight: 200;
+  font-size: 3rem;
+}
+
+.task-container__remove-task{
+  position: relative;
+  left: 35px;
+}
+.remove-task--done{
+  display: none;
 }
