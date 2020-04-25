@@ -1,0 +1,35 @@
+.box_layout{
+  align-items: center;
+  background: url("/images/header.jpeg");
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.box{
+  border-radius: 2px;
+  opacity: 90%;
+  border: none;
+  font-weight: 200;
+  font-size: 1.2rem;
+  height: 180px;
+  background: $dark-grey;
+  padding: 20px;
+  width: 150px;
+}
+
+.box-form{
+  color: $light-pink;
+}
+
+.box--register{
+  height: 280px;
+}
+
+.box-title{
+  color: white;
+  font-size: 2rem;
+  font-weight: 200;
+}

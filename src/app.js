@@ -44,7 +44,7 @@ const App = () => {
             <TaskContext.Provider value={{tasks, tasksDispatch}} >
                 {!!isAuth ?
                     <AppRouter/> :
-                    <LoginPage /> }
+                    <LoginPage />}
             </TaskContext.Provider>
         </UserContext.Provider>)
 }

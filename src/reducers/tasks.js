@@ -2,6 +2,7 @@ const taskReducerDefaultState = [];
 
 const taskReducer = (state =taskReducerDefaultState, action) => {
     switch (action.type) {
+
         case 'ADD_TASK':
             const task = fetch('https://task-manager-duani.herokuapp.com/tasks', {
                 method: 'POST',
@@ -15,28 +16,24 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
                 .then((json) => json)
                 .catch(e=>{ console.log(e);})
 
-            console.log(task)
             return([...state, task]);
 
         case 'REMOVE_TASK':
-
-            const tasks = fetch(`https://task-manager-duani.herokuapp.com/tasks/${action.id}`, {
+            fetch(`https://task-manager-duani.herokuapp.com/tasks/${action.id}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${action.token}`,
                     'Postman-Token': 'dad7fd97-7fa6-44f0-91f3-44222de56e4f',
-                    'cache-control': 'no-cache'
-                }
-        }).then( data => { console.log('deleted')}).then( res => state.filter( (task) => task.id !== action.id)
-        ).catch(e => e)
-
+                    'cache-control': 'no-cache'}})
+                .then( data => { console.log('deleted')})
+                .then( res => state.filter( (task) => task.id !== action.id))
+                .catch(e => e)
             return state.filter( (task) => task.id !== action.id)
 
         case 'EDIT_TASK':
             return state.map( item => (item.id === action.id) ? ([...item, ...action.update]) : (item))
 
         case 'COMPLETE_TASK':
-
             fetch(`https://task-manager-duani.herokuapp.com/tasks/${action.id}`, {
                 method: 'PATCH',
                 headers:
@@ -47,11 +44,7 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
                 body: JSON.stringify({ completed: !action.completed }),
                 json: true }).then( (res) => {console.log(res)})
                 .catch(e=>{console.log(e);})
-
-
             return state
-
-
 
         case 'SET_TASKS':
             return action.tasks

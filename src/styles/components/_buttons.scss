@@ -2,15 +2,27 @@
   color: $off-white;
   background: $dark-pink;
   border: none;
-  border-bottom: 1px solid lighten($dark-pink, 10%);
-  border-radius: 1px;
-  font-weight: 100;
-  font-size: 1.4rem;
+  //border-bottom: 1px solid lighten($dark-pink, 10%);
+  border-radius: 4px;
+  font-weight: semibold;
+  padding: 5px 10px;
+  font-size: 1.2rem;
   margin: 1rem 0 0 0;
+}
+
+.button--secondary{
+  color: $dark-pink;
+  font-weight: 200;
+  background: $off-white ;
 }
 
 .button-container{
   text-align: center;
+}
+.button-container__login{
+  margin: 1.4rem 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .button__new-task{

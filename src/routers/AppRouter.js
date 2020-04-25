@@ -8,7 +8,6 @@ import {PublicRoute} from "./PublicRouter";
 import {PrivateRoute} from "./PrivateRoute";
 import TasksApp from '../components/TasksApp';
 import UserContext from "../context/user-context";
-import SignIn from '../components/SignIn'
 
 
 export const history = createHistory();
@@ -21,7 +20,7 @@ export default () =>{
         <Router history={history}>
             <Switch>
                 <PublicRoute path={'/'} isAuthenticated={!!user.token} component={LoginPage} exact/>
-                <PublicRoute path={'/register'} isAuthenticated={!!user.token} component={SignIn} />
+                <PublicRoute path={'/register'} isAuthenticated={!!user.token} component={LoginPage} exact/>
                 <PrivateRoute path={'/create'} isAuthenticated={!!user.token}  component={AddTask} />
                 <PrivateRoute path={'/dashboard'} isAuthenticated={!!user.token} component={TasksApp} />
             </Switch>

@@ -4,14 +4,27 @@
   font-size: 1.5rem;
   padding: 10px;
   margin: 20px 0 ;
-  width: 50vw;
-  height: 30px;
   line-height: 1.6rem;
   border: none;
   display: inline-block;
 }
 
+.form__input--add_task{
+  width: 50vw;
+  height: 30px;
+}
 
+.form__input--login{
+  background: $grey;
+  color: $off-white;
+  font-size: 1.5rem;
+  padding: 7px;
+  line-height: 1.6rem;
+  border: none;
+  display: block;
+  width: 135px;
+
+}
 
 .form__title{
   color: $off-white;
