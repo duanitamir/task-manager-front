@@ -1,10 +1,11 @@
 const taskReducerDefaultState = [];
+import uid from 'uid';
 
 const taskReducer = (state =taskReducerDefaultState, action) => {
     switch (action.type) {
 
         case 'ADD_TASK':
-            const task = fetch('https://task-manager-duani.herokuapp.com/tasks', {
+           fetch('https://task-manager-duani.herokuapp.com/tasks', {
                 method: 'POST',
                 headers:
                     {'cache-control': 'no-cache',
@@ -16,6 +17,11 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
                 .then((json) => json)
                 .catch(e=>{ console.log(e);})
 
+            const task ={
+                completed: false,
+                description: action.task,
+                _id:uid()
+            }
             return([...state, task]);
 
         case 'REMOVE_TASK':
@@ -25,16 +31,9 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
                     Authorization: `Bearer ${action.token}`,
                     'Postman-Token': 'dad7fd97-7fa6-44f0-91f3-44222de56e4f',
                     'cache-control': 'no-cache'}})
-                .then( () =>  {console.log('removed')})
                 .catch(e => e)
-
-            console.log( state.filter( (task) => task._id !== action.id) )
-
-            return  state.filter( (task) => task._id !== action.id)
-
-
-        case 'EDIT_TASK':
-            return state.map( item => (item.id === action.id) ? ([...item, ...action.update]) : (item))
+            console.log(action.tasks)
+            return  action.tasks
 
         case 'COMPLETE_TASK':
             fetch(`https://task-manager-duani.herokuapp.com/tasks/${action.id}`, {
@@ -45,9 +44,9 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
                         'cache-control': 'no-cache',
                         'Content-Type': 'application/json' },
                 body: JSON.stringify({ completed: !action.completed }),
-                json: true }).then( (res) => {console.log(res)})
+                json: true })
                 .catch(e=>{console.log(e);})
-            return state
+            return state.map( (task) =>  (task._id === action.id) ?  ({...task, completed:!action.completed}) :  (task));
 
         case 'SET_TASKS':
             return action.tasks

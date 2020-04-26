@@ -62701,6 +62701,27 @@ function warning(condition, message) {
 
 /***/ }),
 
+/***/ "./node_modules/uid/dist/index.mjs":
+/*!*****************************************!*\
+  !*** ./node_modules/uid/dist/index.mjs ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var IDX=36, HEX='';
+while (IDX--) HEX += IDX.toString(36);
+
+/* harmony default export */ __webpack_exports__["default"] = (function (len) {
+	var str='', num = len || 11;
+	while (num--) str += HEX[Math.random() * 36 | 0];
+	return str;
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/value-equal/esm/value-equal.js":
 /*!*****************************************************!*\
   !*** ./node_modules/value-equal/esm/value-equal.js ***!
@@ -63099,6 +63120,7 @@ var Header = function Header() {
     className: "panel"
   }, panelItems.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PanelItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      key: item.text,
       image: item.image,
       text: item.text
     });
@@ -63538,7 +63560,7 @@ var Task = function Task(_ref) {
       setCompleted = _useState2[1];
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: complete ? 'task-completed task-container' : 'task-container'
+    className: completed ? 'task-completed task-container' : 'task-container'
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "task-container__title"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -63560,10 +63582,10 @@ var Task = function Task(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "button",
     onClick: function onClick() {
-      setCompleted(!completed);
+      setCompleted(!complete);
       completeTask(_id, completed);
     }
-  }, " Do Again"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "Do Again"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "button",
     onClick: function onClick() {
       removeTask(_id);
@@ -63573,7 +63595,7 @@ var Task = function Task(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "button",
     onClick: function onClick() {
-      setCompleted(!completed);
+      setCompleted(!complete);
       completeTask(_id, completed);
     }
   }, " Done ")));
@@ -63639,6 +63661,7 @@ var TaskForm = function TaskForm(props) {
       token: user.token
     });
     setCount(count + 1);
+    setDescription('');
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -63709,7 +63732,6 @@ var TasksApp = function TasksApp() {
 
   var userData = user.user;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    console.log(user);
     fetch('https://task-manager-duani.herokuapp.com/tasks', {
       method: 'GET',
       headers: {
@@ -63788,41 +63810,33 @@ var TaskList = function TaskList(props) {
       update = _useState2[0],
       setState = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
-      _useState4 = _slicedToArray(_useState3, 2),
-      refresh = _useState4[0],
-      setRefresh = _useState4[1];
-
-  var completeTask = function completeTask(id, completed) {
-    var taskIndex = tasks.findIndex(function (task) {
-      return task._id === id;
-    }); // wanted task
-
+  var completeTask = function completeTask(id, completed, task) {
     tasksDispatch({
       type: 'COMPLETE_TASK',
       completed: completed,
       id: id,
       token: user.token
     });
-    tasks[taskIndex].completed = !tasks[taskIndex].completed;
     setState(update + 1);
   };
 
   var removeTask = function removeTask(id) {
+    var tasksData = tasks.filter(function (task) {
+      return task._id !== id;
+    });
     tasksDispatch({
       type: 'REMOVE_TASK',
       token: user.token,
-      id: id
+      id: id,
+      tasks: tasksData
     });
-    setState(update + 1);
-    setState(update + 1);
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: " task-list content-container"
   }, tasks.length > 0 ? tasks.map(function (task) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Task__WEBPACK_IMPORTED_MODULE_1__["default"], _extends({
-      key: task._id
+      key: task.id
     }, task, {
       completeTask: completeTask,
       removeTask: removeTask
@@ -63882,6 +63896,13 @@ var UserContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return taskReducer; });
+/* harmony import */ var uid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uid */ "./node_modules/uid/dist/index.mjs");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -63896,13 +63917,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var taskReducerDefaultState = [];
 
+
 var taskReducer = function taskReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : taskReducerDefaultState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
     case 'ADD_TASK':
-      var task = fetch('https://task-manager-duani.herokuapp.com/tasks', {
+      fetch('https://task-manager-duani.herokuapp.com/tasks', {
         method: 'POST',
         headers: {
           'cache-control': 'no-cache',
@@ -63921,6 +63943,11 @@ var taskReducer = function taskReducer() {
       })["catch"](function (e) {
         console.log(e);
       });
+      var task = {
+        completed: false,
+        description: action.task,
+        _id: Object(uid__WEBPACK_IMPORTED_MODULE_0__["default"])()
+      };
       return [].concat(_toConsumableArray(state), [task]);
 
     case 'REMOVE_TASK':
@@ -63931,22 +63958,11 @@ var taskReducer = function taskReducer() {
           'Postman-Token': 'dad7fd97-7fa6-44f0-91f3-44222de56e4f',
           'cache-control': 'no-cache'
         }
-      }).then(function () {
-        console.log('removed');
       })["catch"](function (e) {
         return e;
       });
-      console.log(state.filter(function (task) {
-        return task._id !== action.id;
-      }));
-      return state.filter(function (task) {
-        return task._id !== action.id;
-      });
-
-    case 'EDIT_TASK':
-      return state.map(function (item) {
-        return item.id === action.id ? [].concat(_toConsumableArray(item), _toConsumableArray(action.update)) : item;
-      });
+      console.log(action.tasks);
+      return action.tasks;
 
     case 'COMPLETE_TASK':
       fetch("https://task-manager-duani.herokuapp.com/tasks/".concat(action.id), {
@@ -63961,12 +63977,14 @@ var taskReducer = function taskReducer() {
           completed: !action.completed
         }),
         json: true
-      }).then(function (res) {
-        console.log(res);
       })["catch"](function (e) {
         console.log(e);
       });
-      return state;
+      return state.map(function (task) {
+        return task._id === action.id ? _objectSpread({}, task, {
+          completed: !action.completed
+        }) : task;
+      });
 
     case 'SET_TASKS':
       return action.tasks;

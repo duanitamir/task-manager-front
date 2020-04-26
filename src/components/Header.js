@@ -46,7 +46,7 @@ const Header = () =>  {
 
             </div>
             <div className="panel">
-                {panelItems.map(item=><PanelItem image={item.image} text={item.text} />)}
+                {panelItems.map(item=><PanelItem key={item.text} image={item.image} text={item.text} />)}
             </div>
 
         </div>

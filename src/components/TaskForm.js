@@ -19,6 +19,7 @@ const TaskForm = (props) =>{
             token: user.token
         })
         setCount(count +1)
+        setDescription('')
     }
 
 

@@ -9,36 +9,32 @@ const TaskList = (props) => {
     const { tasks } = useContext(TaskContext)
     const { tasksDispatch } = useContext(TaskContext);
     const [update, setState] = useState(0)
-    const [refresh, setRefresh] = useState(0)
 
-    const completeTask = (id, completed) => {
-        let taskIndex = tasks.findIndex( task => task._id === id); // wanted task
+    const completeTask = (id, completed, task) => {
         tasksDispatch({
             type:'COMPLETE_TASK',
             completed,
             id,
             token: user.token,
         });
-        tasks[taskIndex].completed = !tasks[taskIndex].completed;
         setState(update+1)
     }
 
     const removeTask = (id) => {
+        const tasksData = tasks.filter( (task) => (task._id !== id)  )
         tasksDispatch({
             type:'REMOVE_TASK',
             token: user.token,
-            id
+            id,
+            tasks: tasksData
         })
-        setState(update+1)
-        setState(update+1)
     }
 
 
     return (
-
         <div className=' task-list content-container'>
             {tasks.length > 0 ? tasks.map( task => <Task
-                key={task._id}
+                key={task.id}
                 {...task}
                 completeTask={completeTask}
                 removeTask={removeTask}/>) : <div className='empty-task-list'> Add new tasks down </div>}
