@@ -5,6 +5,7 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
     switch (action.type) {
 
         case 'ADD_TASK':
+           let error = false;
            const data = fetch('https://task-manager-duani.herokuapp.com/tasks', {
                 method: 'POST',
                 headers:
@@ -19,7 +20,7 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
                     console.log(json)
                     return json
                 })
-                .catch(e=>{ console.log(e);})
+                .catch(e=>{error=true})
 
             const task = {
                     completed: false,
@@ -28,7 +29,7 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
                 }
 
                 data.then(res => {task._id =res._id})
-            return([...state, task]);
+            return error ? ('Not able to set task') :([...state, task]);
 
         case 'REMOVE_TASK':
             const tasks = fetch(`https://task-manager-duani.herokuapp.com/tasks/${action.id}`, {

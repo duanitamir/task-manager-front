@@ -29,5 +29,23 @@
 .form__title{
   color: $off-white;
   font-size: 2rem;
+}
 
+.form__error{
+  color: $off-white;
+  font-size: 1.6rem;
+}
+
+.form__error--login{
+  color: red;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.register-form__container{
+  height:225px;
+}
+
+.login-form__container{
+  height: 125px;
 }

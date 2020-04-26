@@ -19,7 +19,6 @@ const userReducer = (state = {user:null}, action) => {
 
 
         case 'REGISTER':
-            console.log(action)
             fetch(`https://task-manager-duani.herokuapp.com/users`, {
                 method: 'POST',
                 headers:
@@ -32,11 +31,7 @@ const userReducer = (state = {user:null}, action) => {
                         email: action.email,
                         password: action.password })})
                 .then( data => {console.log(data)})
-                .catch( e => {console.log(e)})
-
-
-
-
+                .catch( e => {console.log(e); return e})
 
         default:
                 return state;
