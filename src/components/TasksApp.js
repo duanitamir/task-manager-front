@@ -10,6 +10,7 @@ const TasksApp = () => {
     const [loading, setLoading] = useState(false);
     const { tasksDispatch } = useContext(TaskContext);
     const userData =  user.user;
+
     useEffect( () => {
         fetch('https://task-manager-duani.herokuapp.com/tasks',{
                 method: 'GET',
