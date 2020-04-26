@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const LoginForm = ({handleLogin, email, setEmail, pass, setPass, setLocation, error}) =>{
+const LoginForm = ({handleLogin, setError, setEmail, setPass, setLocation, error}) =>{
     return (
         <div>
             <form onSubmit={handleLogin}>
@@ -14,7 +14,10 @@ const LoginForm = ({handleLogin, email, setEmail, pass, setPass, setLocation, er
                 </div>
                 <div className='button-container__login'>
                     <button className='button'>LOGIN</button>
-                    <button className='button--secondary button' onClick={()=> setLocation('register')}>REGISTER</button>
+                    <button className='button--secondary button' onClick={()=> {
+                        setLocation('register');
+                        setError(false)
+                    }}>REGISTER</button>
                 </div>
             </form>
         </div>

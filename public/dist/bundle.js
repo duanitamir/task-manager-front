@@ -63174,9 +63174,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var LoginForm = function LoginForm(_ref) {
   var handleLogin = _ref.handleLogin,
-      email = _ref.email,
+      setError = _ref.setError,
       setEmail = _ref.setEmail,
-      pass = _ref.pass,
       setPass = _ref.setPass,
       setLocation = _ref.setLocation,
       error = _ref.error;
@@ -63205,7 +63204,8 @@ var LoginForm = function LoginForm(_ref) {
   }, "LOGIN"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "button--secondary button",
     onClick: function onClick() {
-      return setLocation('register');
+      setLocation('register');
+      setError(false);
     }
   }, "REGISTER"))));
 };
@@ -63404,6 +63404,7 @@ var LoginPage = function LoginPage(props) {
     email: email,
     pass: password,
     setEmail: setEmail,
+    setError: setError,
     setPass: setPass,
     setLocation: setLocation
   }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -63414,6 +63415,7 @@ var LoginPage = function LoginPage(props) {
     className: "box-form"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RegisterForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
     email: email,
+    setError: setError,
     pass: password,
     setEmail: setEmail,
     setPass: setPass,
@@ -63494,6 +63496,7 @@ var RegisterForm = function RegisterForm(_ref) {
       age = _ref.age,
       setAge = _ref.setAge,
       handleRegister = _ref.handleRegister,
+      setError = _ref.setError,
       setLocation = _ref.setLocation,
       error = _ref.error;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -63533,7 +63536,8 @@ var RegisterForm = function RegisterForm(_ref) {
   }, "REGISTER"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "button--secondary button",
     onClick: function onClick() {
-      return setLocation('login');
+      setLocation('login');
+      setError(false);
     }
   }, "LOGIN"))));
 };

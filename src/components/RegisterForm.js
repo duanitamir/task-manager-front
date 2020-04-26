@@ -4,7 +4,7 @@ import { history } from '../routers/AppRouter'
 
 
 
-const RegisterForm = ({email, setEmail, pass, setPass, name, setName, age, setAge, handleRegister, setLocation, error}) => {
+const RegisterForm = ({email, setEmail, pass, setPass, name, setName, age, setAge, handleRegister, setError, setLocation, error}) => {
 
     return (
         <div>
@@ -22,7 +22,7 @@ const RegisterForm = ({email, setEmail, pass, setPass, name, setName, age, setAg
             </div>
                 <div className="button-container__login">
                     <button  className='button' >REGISTER</button>
-                    <button  className='button--secondary button'  onClick={()=> setLocation('login')}>LOGIN</button>
+                    <button  className='button--secondary button'  onClick={()=> {setLocation('login'); setError(false)}}>LOGIN</button>
                 </div>
             </form>
         </div>

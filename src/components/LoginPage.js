@@ -112,6 +112,7 @@ const LoginPage = (props) => {
                         email={email}
                         pass={password}
                         setEmail={setEmail}
+                        setError={setError}
                         setPass={setPass}
                         setLocation={setLocation}
                     />
@@ -124,6 +125,7 @@ const LoginPage = (props) => {
                     <div className='box-form'>
                     <RegisterForm
                         email={email}
+                        setError={setError}
                         pass={password}
                         setEmail={setEmail}
                         setPass={setPass}
