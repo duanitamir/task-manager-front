@@ -9,15 +9,18 @@ const LoginForm = ({handleLogin, setError, setEmail, setPass, setLocation, error
                 <label>EMAIL</label>
                 <input className='form__input--login' type="text" onChange={ (e) => {setEmail( e.target.value )}}/>
                 <label>PASSWORD</label>
-                <input className='form__input--login' type="text" onChange={ (e) => {setPass( e.target.value )}}/>
+                <input className='form__input--login' type="password" onChange={ (e) => {setPass( e.target.value )}}/>
                 { error && <div className='form__error--login'> {error}</div> }
                 </div>
                 <div className='button-container__login'>
                     <button className='button'>LOGIN</button>
-                    <button className='button--secondary button' onClick={()=> {
-                        setLocation('register');
-                        setError(false)
-                    }}>REGISTER</button>
+
+                </div>
+                <div className='form__change'>
+                    <button className='button--link' onClick={()=> {
+                    setLocation('register');
+                    setError(false)
+                }}>REGISTER</button>
                 </div>
             </form>
         </div>
