@@ -6,8 +6,7 @@ module.exports = () => {
 
     return {
         entry: './src/app.js',
-        mode: 'development',
-        watch: true,
+        // watch: true,
         output: {
             path: path.join(__dirname, 'public', 'dist'),
             filename: 'bundle.js'

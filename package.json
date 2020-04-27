@@ -6,7 +6,9 @@
   "scripts": {
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack --mode production --config ./webpack.prod.config.js",
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
+
   },
   "proxy": "https://task-manager-duani.herokuapp.com/",
   "author": "",
