@@ -10,6 +10,9 @@
     "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
 
   },
+  "engines": {
+    "node": ">=6.11.5"
+  },
   "proxy": "https://task-manager-duani.herokuapp.com/",
   "author": "",
   "license": "ISC",
