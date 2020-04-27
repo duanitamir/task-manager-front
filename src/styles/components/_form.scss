@@ -22,7 +22,7 @@
   line-height: 1.6rem;
   border: none;
   display: block;
-  width: 135px;
+  width: 140px;
 
 }
 
@@ -48,4 +48,10 @@
 
 .login-form__container{
   height: 125px;
+}
+
+.form__change{
+  text-align: center;
+  font-size: 1.2rem;
+  color: $off-white;
 }

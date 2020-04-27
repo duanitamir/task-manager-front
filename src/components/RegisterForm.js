@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 
 
-const RegisterForm = ({email, setEmail, pass, setPass, name, setName, age, setAge, handleRegister, setError, setLocation, error}) => {
+const RegisterForm = ({setEmail, setPass, setName, setAge, handleRegister, setError, setLocation, error}) => {
 
     return (
         <div>
@@ -12,14 +12,16 @@ const RegisterForm = ({email, setEmail, pass, setPass, name, setName, age, setAg
                 <label>EMAIL</label>
                 <input className='form__input--login' type="text" onChange={ (e) => {setEmail( e.target.value )}}/>
                 <label>PASSWORD</label>
-                <input className='form__input--login' type="text" onChange={ (e) => {setPass( e.target.value )}}/>
+                <input className='form__input--login' type="password" onChange={ (e) => {setPass( e.target.value )}}/>
                 <label>AGE</label>
                 <input className='form__input--login' type="text" onChange={ (e) => {setAge( e.target.value )}}/>
                 { error && <div className='form__error--login'> {error}</div> }
             </div>
                 <div className="button-container__login">
                     <button  className='button' >REGISTER</button>
-                    <button  className='button--secondary button'  onClick={()=> {setLocation('login'); setError(false)}}>LOGIN</button>
+                </div>
+                <div className='form__change'>
+                    Already registered? <button  className='button--link '  onClick={()=> {setLocation('login'); setError(false)}}>LOGIN</button>
                 </div>
             </form>
         </div>
