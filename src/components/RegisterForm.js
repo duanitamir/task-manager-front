@@ -1,7 +1,4 @@
 import React, {useContext, useState} from 'react';
-import UserContext from "../context/user-context";
-import { history } from '../routers/AppRouter'
-
 
 
 const RegisterForm = ({email, setEmail, pass, setPass, name, setName, age, setAge, handleRegister, setError, setLocation, error}) => {

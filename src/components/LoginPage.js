@@ -3,6 +3,8 @@ import UserContext from "../context/user-context";
 import {history} from '../routers/AppRouter'
 import LoginForm from './LoginForm'
 import RegisterForm from './RegisterForm'
+const validator = require('validator');
+
 
 const LoginPage = (props) => {
 
@@ -25,77 +27,95 @@ const LoginPage = (props) => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        console.log(email, password)
-        const response = fetch('https://task-manager-duani.herokuapp.com/users/login', {
-            method: 'POST',
-            headers: {
+
+        if(email === '' || !(validator.isEmail(email))){
+            setError('Non valid email provided, please try again')
+        }
+        else{
+            setError(false)
+            const response = fetch('https://task-manager-duani.herokuapp.com/users/login', {
+                method: 'POST',
+                headers: {
                     'cache-control': 'no-cache',
                     'Content-Type': 'application/json'},
-            body:JSON.stringify( { email, password} )})
-            .then( (res) => { console.log(res)
-            return res.json()}).then((data)=>{
-                console.log(data)
-                userDispatch({type: 'LOGIN' ,user: (data.user) ,token: (data.token)})
-                setError(false)
-            return ({user: data.user, token: data.token});
-        }).catch(e=> {
-            setError('Email or password are not correct')
-            })
+                body:JSON.stringify( { email, password} )})
+                .then( (res) => { console.log(res)
+                    return res.json()}).then((data)=>{
+                    console.log(data)
+                    userDispatch({type: 'LOGIN' ,user: (data.user) ,token: (data.token)})
+                    setError(false)
+                    return ({user: data.user, token: data.token});
+                }).catch(e=> {
+                    setError('Email or password are not correct')
+                })
 
 
-        response.then((data) => {
-            if(data.token){
-                history.push('/dashboard')
-                return true;
-            }
-        }).catch( e => {
-            console.log(e);})
+            response.then((data) => {
+                if(data.token){
+                    history.push('/dashboard')
+                    return true;
+                }
+            }).catch( e => {
+                console.log(e);})
+
+        }
+
     }
 
     const handleRegister =  (e) => {
         e.preventDefault();
 
-        if(email === ''){
-            setError('Unvalid email provided')
+        if(email === '' || !(validator.isEmail(email))){
+            setError('Non valid email provided, please try again')
         }else if(password.length < 7){
             setError('Password must have at least 7 letters')
         }else if(name===''){
             setError('Unvalid name')
         }
+        else if(password.toLowerCase().includes('password')){
+            setError('Password can not contain the word "password"')
+        }
+        else if(age < 0){ setError('Age must be positive number ') }
 
-        const userData = fetch( 'https://task-manager-duani.herokuapp.com/users', {
-            method: 'POST',
-            headers: {
-                    'cache-control': 'no-cache',
-                    'Content-Type': 'application/json' },
-            body:  JSON.stringify({name, age, email, password})})
-            .then( data => data)
-            .then( data => {
-
-                const response = fetch('https://task-manager-duani.herokuapp.com/users/login', {
+        else{
+            setError(false)
+            const userData = fetch( 'https://task-manager-duani.herokuapp.com/users', {
                 method: 'POST',
                 headers: {
                     'cache-control': 'no-cache',
-                    'Content-Type': 'application/json'},
-                body:JSON.stringify({ email,  password }
-                )}
-        ).then( (res) => {
-            return res.json()}).then((data)=>{
-            userDispatch({type: 'LOGIN' ,user: (data.user) ,token: (data.token)})
-            return ({user: data.user, token: data.token});
-        }).catch(e=> {console.log(e);})
+                    'Content-Type': 'application/json' },
+                body:  JSON.stringify({name, age, email, password})})
+                .then( data => data)
+                .then( data => {
 
-        response.then((data) => {
-            if(data.token){
-                setError('false')
-                history.push('/dashboard')
-                return true;
-            }
-        }).catch( e => {
-            console.log(e);})
+                    const response = fetch('https://task-manager-duani.herokuapp.com/users/login', {
+                        method: 'POST',
+                        headers: {
+                            'cache-control': 'no-cache',
+                            'Content-Type': 'application/json'},
+                        body:JSON.stringify({ email,  password }
+                        )}
+                    ).then( (res) => {
+                        return res.json()}).then((data)=>{
+                        userDispatch({type: 'LOGIN' ,user: (data.user) ,token: (data.token)})
+                        return ({user: data.user, token: data.token});
+                    }).catch(e=> {setError('There is already user with this email address')})
 
-            })
-            .catch(e => e)
+                    response.then((data) => {
+                        if(data.token){
+                            setError('false')
+                            history.push('/dashboard')
+                            return true;
+                        }
+                    }).catch( e => {
+                        console.log(e);})
+
+                })
+                .catch(e => e)
+
+
+        }
+
     }
 
 
@@ -114,6 +134,7 @@ const LoginPage = (props) => {
                         setEmail={setEmail}
                         setError={setError}
                         setPass={setPass}
+                        error={error}
                         setLocation={setLocation}
                     />
 
