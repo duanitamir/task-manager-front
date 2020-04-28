@@ -9,7 +9,7 @@
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "build": "GENERATE_SOURCEMAP= false react-scripts build",
-    "heroku-postbuild": "webpack"
+    "heroku-postbuild": "GENERATE_SOURCEMAP= false react-scripts build"
   },
   "engines": {
     "node": ">=6.11.5"
