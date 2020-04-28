@@ -8,7 +8,7 @@
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "build": "webpack",
-    "heroku-postbuild": "webpack"
+    "heroku-postbuild": "npm run webpack"
   },
   "engines": {
     "node": ">=6.11.5"
