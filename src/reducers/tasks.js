@@ -1,5 +1,5 @@
-const taskReducerDefaultState = [];
 import uid from 'uid';
+const taskReducerDefaultState = [];
 
 const taskReducer = (state =taskReducerDefaultState, action) => {
     switch (action.type) {

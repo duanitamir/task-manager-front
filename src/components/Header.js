@@ -1,10 +1,10 @@
 import React,{useContext} from 'react';
 import { Link } from "react-router-dom";
 
-import cloud from '../../public/images/icons/cloud.svg'
-import idea from '../../public/images/icons/creativity.svg'
-import actions from '../../public/images/icons/pencil.svg'
-import team from '../../public/images/icons/team.svg'
+import cloud from '/images/icons/cloud.svg'
+import idea from '/images/icons/creativity.svg'
+import actions from '/images/icons/pencil.svg'
+import team from '/images/icons/team.svg'
 
 import UserContext from '../context/user-context'
 import {history} from "../routers/AppRouter";

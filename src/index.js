@@ -15,12 +15,12 @@ let isAuth = localStorage.getItem('token');
 const renderApp = () => {
     if(!isAuth){
         isAuth = true;
-        ReactDOM.render( <App/> , document.getElementById('app'))
+        ReactDOM.render( <Index/> , document.getElementById('app'))
         history.push('/dashboard');
     }
 }
 
-const App = () => {
+const Index = () => {
 
     const [user, userDispatch] = useReducer(UserReducer, {});
     const [tasks, tasksDispatch] = useReducer(TasksReducer, []);
@@ -49,7 +49,7 @@ const App = () => {
         </UserContext.Provider>)
 }
 
-ReactDOM.render( <App />, document.getElementById('app'))
+ReactDOM.render( <Index />, document.getElementById('app'))
 
 
 

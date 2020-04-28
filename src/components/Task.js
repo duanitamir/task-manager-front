@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import moment from 'moment';
-import rmv from '../../public/images/rmv_icon.svg'
+import rmv from '/images/rmv_icon.svg'
 
 const Task = ({completed, description, _id, completeTask, createdAt, removeTask}) => {
 
