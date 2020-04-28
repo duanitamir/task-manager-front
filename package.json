@@ -13,7 +13,6 @@
   "engines": {
     "node": ">=6.11.5"
   },
-
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -23,6 +22,9 @@
     "@babel/plugin-transform-react-jsx": "^7.9.4",
     "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-polyfill": "^6.26.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "css-loader": "^3.5.3",
@@ -47,9 +49,6 @@
     "webpack": "^4.43.0"
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.9.4",
-    "babel-polyfill": "^6.26.0",
-    "mini-css-extract-plugin": "^0.9.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.10.3",
