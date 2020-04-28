@@ -12,7 +12,8 @@
     "heroku-postbuild": "GENERATE_SOURCEMAP=false react-scripts build"
   },
   "engines": {
-    "node": ">=6.11.5"
+    "node": "v14.0.0",
+    "npm": "6.14.4"
   },
   "author": "",
   "license": "ISC",
