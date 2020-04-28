@@ -6,8 +6,8 @@
   "scripts": {
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "build": "webpack --mode production --config ./webpack.prod.config.js",
-    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
+    "build": "webpack",
+    "heroku-postbuild": "webpack"
 
   },
   "engines": {
