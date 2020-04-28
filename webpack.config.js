@@ -17,13 +17,6 @@ module.exports = () => {
                 loader: 'babel-loader',
                 test: /\.js$/,
                 exclude: /node_modules/
-            },            {
-                test: /\.(svg|png|jpe?g|gif|mp4)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    }
-                ],
             }, {
                 test: /\.s?css$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']

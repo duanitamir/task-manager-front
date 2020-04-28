@@ -1,4 +1,4 @@
-import React, { useContext, useState ,useEffect} from 'react';
+import React, { useContext, useState } from 'react';
 import Task from './Task'
 import TaskContext from '../context/tasks-context'
 import UserContext from '../context/user-context'

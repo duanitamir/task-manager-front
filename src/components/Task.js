@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import moment from 'moment';
-import rmv from '../../public/images/rmv_icon.svg'
+// import rmv from '../../public/images/rmv_icon.svg'
 
 const Task = ({completed, description, _id, completeTask, createdAt, removeTask}) => {
 
@@ -13,7 +13,7 @@ const Task = ({completed, description, _id, completeTask, createdAt, removeTask}
                 <span className='task-container__createdAt'>{moment(createdAt).format('MMM Do YY')}</span>
                 {!completed && <span className= 'task-container__remove-task'>
                 <button className='x-button ' onClick={() => {removeTask(_id)}}>
-                    <img className="id-img" src={rmv}/>
+                    <img className="id-img" src={'/images/rmv_icon.svg'} alt = 'Remove task icon'/>
                 </button>
             </span>}
             </div>

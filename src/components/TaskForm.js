@@ -1,12 +1,12 @@
-import React,{useContext, useState, useEffect} from 'react';
+import React,{useContext, useState} from 'react';
 import UserContext from '../context/user-context';
 import TaskContext from '../context/tasks-context';
 
 
-const TaskForm = (props) =>{
+const TaskForm = () =>{
 
     const { user } = useContext(UserContext)
-    const { tasks, tasksDispatch } = useContext(TaskContext);
+    const { tasksDispatch } = useContext(TaskContext);
     const [count, setCount ] = useState(0)
     const [error, setError] = useState('')
 

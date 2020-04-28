@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React from 'react';
 
 
 const RegisterForm = ({setEmail, setPass, setName, setAge, handleRegister, setError, setLocation, error}) => {

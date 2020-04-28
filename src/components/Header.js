@@ -1,10 +1,10 @@
 import React,{useContext} from 'react';
 import { Link } from "react-router-dom";
-
-import cloud from '../../public/images/icons/cloud.svg'
-import idea from '../../public/images/icons/creativity.svg'
-import actions from '../../public/images/icons/pencil.svg'
-import team from '../../public/images/icons/team.svg'
+//
+// import cloud from '../../public/images/icons/cloud.svg'
+// import idea from '../../public/images/icons/creativity.svg'
+// import actions from '../../public/images/icons/pencil.svg'
+// import team from '../../public/images/icons/team.svg'
 
 import UserContext from '../context/user-context'
 import {history} from "../routers/AppRouter";
@@ -16,9 +16,9 @@ const Header = () =>  {
     const {userDispatch} = useContext(UserContext)
 
     const panelItems = [
-        {image:cloud, text:`Use cloud base database to store your tasks and ideas`},
-        {image:actions, text: 'Easily add, mark as done and remove tasks and idea from the board'},
-        {image:team, text:'Work with a team and share your ideas on the task board'}
+        {image:'/images/icons/cloud.svg', text:`Use cloud base database to store your tasks and ideas`},
+        {image:'/images/icons/pencil.svg', text: 'Easily add, mark as done and remove tasks and idea from the board'},
+        {image:'/images/icons/team.svg', text:'Work with a team and share your ideas on the task board'}
     ]
 
 

@@ -32,7 +32,7 @@ const taskReducer = (state =taskReducerDefaultState, action) => {
             return error ? ('Not able to set task') :([...state, task]);
 
         case 'REMOVE_TASK':
-            const tasks = fetch(`https://task-manager-duani.herokuapp.com/tasks/${action.id}`, {
+            fetch(`https://task-manager-duani.herokuapp.com/tasks/${action.id}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${action.token}`,

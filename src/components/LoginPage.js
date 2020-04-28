@@ -22,7 +22,7 @@ const LoginPage = (props) => {
     const [location, setLocation] = useState('login')
     const [error, setError] = useState(false)
 
-    const {user, userDispatch} = useContext(UserContext);
+    const {userDispatch} = useContext(UserContext);
 
 
     const handleLogin = (e) => {
@@ -79,7 +79,7 @@ const LoginPage = (props) => {
 
         else{
             setError(false)
-            const userData = fetch( 'https://task-manager-duani.herokuapp.com/users', {
+            fetch( 'https://task-manager-duani.herokuapp.com/users', {
                 method: 'POST',
                 headers: {
                     'cache-control': 'no-cache',

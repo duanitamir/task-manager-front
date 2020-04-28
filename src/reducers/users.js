@@ -32,6 +32,7 @@ const userReducer = (state = {user:null}, action) => {
                         password: action.password })})
                 .then( data => {console.log(data)})
                 .catch( e => {console.log(e); return e})
+            break
 
         default:
                 return state;

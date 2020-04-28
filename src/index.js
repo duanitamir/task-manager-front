@@ -1,4 +1,4 @@
-import React, {useEffect, useContext, useState, useReducer} from 'react';
+import React, {useEffect, useReducer} from 'react';
 import ReactDOM from 'react-dom';
 import LoginPage from './components/LoginPage';
 import UserReducer from "./reducers/users";
@@ -7,7 +7,7 @@ import AppRouter, {history} from "./routers/AppRouter";
 import TasksReducer from "./reducers/tasks";
 import TaskContext from "./context/tasks-context";
 import './styles/styles.scss'
-require("babel-polyfill");
+// require("babel-polyfill");
 
 
 let isAuth = localStorage.getItem('token');
